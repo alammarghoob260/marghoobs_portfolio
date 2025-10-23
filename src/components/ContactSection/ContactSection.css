@@ -1,0 +1,58 @@
+.contact-section {
+  padding-top: 5rem; /* py-20 */
+  padding-bottom: 5rem;
+  background-color: #1f2937; /* bg-gray-800 */
+  color: #ffffff; /* text-white */
+}
+
+.contact-container {
+  max-width: 48rem; /* max-w-3xl */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem; /* px-6 */
+  padding-right: 1.5rem;
+  text-align: center;
+}
+
+.contact-title {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 700; /* font-bold */
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+
+.contact-text {
+  color: #d1d5db; /* text-gray-300 */
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center; /* justify-center */
+  gap: 1.5rem; /* gap-6 */
+}
+
+.contact-email {
+  background-color: #2563eb; /* bg-blue-600 */
+  padding: 0.5rem 1rem; /* px-4 py-2 */
+  border-radius: 0.25rem; /* rounded */
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.contact-email:hover {
+  background-color: #3b82f6; /* hover:bg-blue-500 */
+}
+
+.contact-linkedin {
+  background-color: #1d4ed8; /* bg-blue-700 */
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.contact-linkedin:hover {
+  background-color: #2563eb; /* hover:bg-blue-600 */
+}

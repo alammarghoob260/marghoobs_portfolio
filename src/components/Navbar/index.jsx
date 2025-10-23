@@ -1,36 +1,38 @@
 import { useState } from "react";
+import "./Navbar.css";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const links = ["Home", "About", "Skills", "Projects", "Contact"];
 
   return (
-    <nav className="bg-gray-900 fixed w-full z-50 shadow-md">
-      <div className="max-w-6xl mx-auto flex justify-between items-center py-4 px-6">
-        <div className="text-2xl font-bold">MyPortfolio</div>
-        <div className="hidden md:flex space-x-6">
-          {["Home", "About", "Skills", "Projects", "Contact"].map((link) => (
+    <nav className="navbar">
+      <div className="navbar-container">
+        <div className="navbar-logo">MyPortfolio</div>
+        <div className="navbar-links-desktop">
+          {links.map((link) => (
             <a
               key={link}
               href={`#${link.toLowerCase()}`}
-              className="hover:text-blue-400"
+              className="navbar-link"
             >
               {link}
             </a>
           ))}
         </div>
-        <div className="md:hidden">
+        <div className="navbar-hamburger">
           <button onClick={() => setOpen(!open)}>
-            <span className="text-2xl">☰</span>
+            <span>☰</span>
           </button>
         </div>
       </div>
       {open && (
-        <div className="md:hidden bg-gray-800 px-6 py-4 flex flex-col space-y-3">
-          {["Home", "About", "Skills", "Projects", "Contact"].map((link) => (
+        <div className="navbar-links-mobile">
+          {links.map((link) => (
             <a
               key={link}
               href={`#${link.toLowerCase()}`}
-              className="hover:text-blue-400"
+              className="navbar-link"
             >
               {link}
             </a>

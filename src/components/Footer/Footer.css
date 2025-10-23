@@ -1,0 +1,7 @@
+.footer {
+  background-color: #111827; /* bg-gray-900 */
+  color: #6b7280; /* text-gray-500 */
+  padding-top: 1.5rem; /* py-6 */
+  padding-bottom: 1.5rem;
+  text-align: center;
+}

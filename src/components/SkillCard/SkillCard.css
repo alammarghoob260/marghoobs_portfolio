@@ -1,0 +1,22 @@
+.skill-card {
+  background-color: #1f2937; /* gray-800 */
+  padding: 1.5rem; /* p-6 */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* shadow-lg */
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: scale(1.05);
+}
+
+.skill-name {
+  font-size: 1.125rem; /* text-xl */
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.skill-level {
+  color: #d1d5db; /* gray-300 */
+}

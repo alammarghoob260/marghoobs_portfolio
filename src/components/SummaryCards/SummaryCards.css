@@ -1,0 +1,23 @@
+.summary-card {
+  background-color: #1f2937; /* gray-800 */
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.summary-card:hover {
+  transform: scale(1.05);
+}
+
+.summary-title {
+  font-size: 1.125rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.summary-description {
+  color: #d1d5db; /* gray-300 */
+  font-size: 0.875rem;
+}

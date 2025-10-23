@@ -1,0 +1,23 @@
+.hero-section {
+  height: 100vh; /* h-screen */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #111827; /* bg-gray-900 */
+  color: white;
+  text-align: center;
+  padding: 0 1.5rem; /* optional for responsiveness */
+}
+
+.hero-title {
+  font-size: 3rem; /* text-5xl */
+  font-weight: bold; /* font-bold */
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+.hero-subtitle {
+  font-size: 1.25rem; /* text-xl */
+  color: #d1d5db; /* text-gray-300 */
+  max-width: 36rem; /* max-w-xl */
+}

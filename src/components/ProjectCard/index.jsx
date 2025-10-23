@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import "./ProjectCard.css";
 
 const ProjectCard = ({ project }) => (
   <motion.div
@@ -6,15 +7,15 @@ const ProjectCard = ({ project }) => (
     whileInView={{ opacity: 1, y: 0 }}
     initial={{ opacity: 0, y: 50 }}
     transition={{ duration: 0.4 }}
-    className="bg-gray-800 p-6 rounded-lg shadow-lg"
+    className="project-card"
   >
-    <h3 className="text-xl font-bold mb-2">{project.name}</h3>
-    <p className="text-gray-300 mb-4">{project.description}</p>
+    <h3 className="project-title">{project.name}</h3>
+    <p className="project-description">{project.description}</p>
     <a
       href={project.link}
       target="_blank"
       rel="noreferrer"
-      className="text-blue-400 hover:underline"
+      className="project-link"
     >
       View Project
     </a>

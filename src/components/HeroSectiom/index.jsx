@@ -1,15 +1,13 @@
 import { motion } from "framer-motion";
+import "./HeroSection.css";
 
 const HeroSection = () => (
-  <section
-    id="home"
-    className="h-screen flex flex-col justify-center items-center bg-gray-900 text-white"
-  >
+  <section id="home" className="hero-section">
     <motion.h1
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="text-5xl font-bold mb-4 text-center"
+      className="hero-title"
     >
       Hello, I’m John Doe
     </motion.h1>
@@ -17,7 +15,7 @@ const HeroSection = () => (
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.3 }}
-      className="text-xl text-gray-300 text-center max-w-xl"
+      className="hero-subtitle"
     >
       A passionate Frontend Developer crafting beautiful and functional web
       experiences.
