@@ -1,4 +1,4 @@
-import SkillCard from "./SkillCard";
+import SkillCard from "../SkillCard";
 import { skills } from "../data/skills";
 import "./SkillsSection.css";
 

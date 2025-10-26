@@ -1,22 +1,147 @@
+/* SkillCard.css */
+
 .skill-card {
-  background-color: #1f2937; /* gray-800 */
-  padding: 1.5rem; /* p-6 */
-  border-radius: 0.5rem; /* rounded-lg */
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* shadow-lg */
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(147, 51, 234, 0.2);
+  background: linear-gradient(
+    135deg,
+    rgba(34, 211, 238, 0.05),
+    rgba(147, 51, 234, 0.05)
+  );
+  transition: all 0.3s ease;
   text-align: center;
-  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated gradient background on hover */
+.skill-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(34, 211, 238, 0.1),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.skill-card:hover::before {
+  left: 100%;
 }
 
 .skill-card:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px);
+  border-color: rgba(34, 211, 238, 0.5);
+  box-shadow: 0 10px 30px rgba(147, 51, 234, 0.3);
+  background: linear-gradient(
+    135deg,
+    rgba(34, 211, 238, 0.1),
+    rgba(147, 51, 234, 0.1)
+  );
 }
 
 .skill-name {
-  font-size: 1.125rem; /* text-xl */
+  font-size: 1.25rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
+  color: #22d3ee;
+  text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+  position: relative;
+  z-index: 1;
 }
 
 .skill-level {
-  color: #d1d5db; /* gray-300 */
+  font-size: 0.875rem;
+  color: #9ca3af;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: relative;
+  z-index: 1;
+}
+
+/* Add icon support (optional) */
+.skill-card .skill-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+  filter: drop-shadow(0 0 10px rgba(34, 211, 238, 0.5));
+}
+
+/* Responsive Design */
+@media (min-width: 640px) {
+  .skill-card {
+    padding: 2rem;
+  }
+
+  .skill-name {
+    font-size: 1.5rem;
+  }
+
+  .skill-level {
+    font-size: 1rem;
+  }
+}
+
+/* Light Mode Support */
+.skill-card.light-mode {
+  background: linear-gradient(
+    135deg,
+    rgba(168, 85, 247, 0.05),
+    rgba(236, 72, 153, 0.05)
+  );
+  border-color: rgba(168, 85, 247, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.skill-card.light-mode::before {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(168, 85, 247, 0.1),
+    transparent
+  );
+}
+
+.skill-card.light-mode:hover {
+  border-color: rgba(124, 58, 237, 0.5);
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.2);
+  background: linear-gradient(
+    135deg,
+    rgba(168, 85, 247, 0.1),
+    rgba(236, 72, 153, 0.1)
+  );
+}
+
+.skill-card.light-mode .skill-name {
+  color: #7c3aed;
+  text-shadow: 0 0 10px rgba(124, 58, 237, 0.3);
+}
+
+.skill-card.light-mode .skill-level {
+  color: #6b7280;
+}
+
+/* Different skill levels styling (optional) */
+.skill-card[data-level="Expert"] .skill-level {
+  color: #22d3ee;
+}
+
+.skill-card[data-level="Advanced"] .skill-level {
+  color: #a855f7;
+}
+
+.skill-card[data-level="Intermediate"] .skill-level {
+  color: #ec4899;
+}
+
+.skill-card[data-level="Beginner"] .skill-level {
+  color: #f59e0b;
 }

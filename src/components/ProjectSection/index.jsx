@@ -1,6 +1,6 @@
-import ProjectCard from "./ProjectCard";
-import { projects } from "../data/projects";
-import "./ProjectsSection.css";
+import ProjectCard from "../ProjectCard";
+import { projects } from "../data/project";
+import "./ProjectSection.css";
 
 const ProjectsSection = () => (
   <section id="projects" className="projects-section">
