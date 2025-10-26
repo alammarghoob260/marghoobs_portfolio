@@ -92,3 +92,27 @@
   background: linear-gradient(to right, #7c3aed, #ec4899);
   box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
 }
+
+/* AboutSection.css - Add this */
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 4rem;
+  max-width: 1280px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .summary-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+}
