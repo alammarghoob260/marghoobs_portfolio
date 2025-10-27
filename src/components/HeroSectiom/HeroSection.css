@@ -173,3 +173,46 @@
     transform: translateX(-50%) translateY(10px);
   }
 }
+
+/* HeroSection.css - Add this */
+
+.hero-buttons {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-btn-primary,
+.hero-btn-secondary {
+  padding: 0.875rem 2rem;
+  border-radius: 9999px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.hero-btn-primary {
+  background: linear-gradient(to right, #22d3ee, #a855f7);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(147, 51, 234, 0.5);
+}
+
+.hero-btn-secondary {
+  background: transparent;
+  color: #22d3ee;
+  border: 2px solid #22d3ee;
+  box-shadow: 0 4px 14px rgba(34, 211, 238, 0.3);
+}
+
+/* Make title and subtitle hoverable */
+.hero-title {
+  cursor: pointer;
+}
+
+.hero-subtitle {
+  cursor: pointer;
+}

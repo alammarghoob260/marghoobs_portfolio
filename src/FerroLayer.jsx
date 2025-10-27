@@ -6,7 +6,6 @@ import SkillsSection from "./components/SkillsSection";
 import ProjectsSection from "./components/ProjectSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
-import FerroLayer from "./FerroLayer";
 import "./App.css";
 
 const App = () => {
@@ -30,21 +29,41 @@ const App = () => {
     };
 
     document.addEventListener("click", handleSmoothScroll);
-    return () => document.removeEventListener("click", handleSmoothScroll);
+
+    // Ferrofluid effect
+    const handleMouseMove = (e) => {
+      const elements = document.querySelectorAll(".ferro");
+      elements.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        const x = e.clientX - (rect.left + rect.width / 2);
+        const y = e.clientY - (rect.top + rect.height / 2);
+
+        // Apply a subtle transform for magnetic/ferrofluid effect
+        el.style.transform = `translate(${x * 0.03}px, ${y * 0.03}px) rotateX(${
+          -y * 0.02
+        }deg) rotateY(${x * 0.02}deg)`;
+      });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      document.removeEventListener("click", handleSmoothScroll);
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
   }, []);
 
   return (
     <>
-      <FerroLayer /> {/* <-- add ferrofluid layer here */}
       <Navbar />
       <main>
-        <HeroSection />
-        <AboutSection />
-        <SkillsSection />
-        <ProjectsSection />
-        <ContactSection />
+        <HeroSection className="ferro" />
+        <AboutSection className="ferro" />
+        <SkillsSection className="ferro" />
+        <ProjectsSection className="ferro" />
+        <ContactSection className="ferro" />
       </main>
-      <Footer />
+      <Footer className="ferro" />
     </>
   );
 };
