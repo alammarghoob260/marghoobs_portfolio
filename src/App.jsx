@@ -7,6 +7,7 @@ import ProjectsSection from "./components/ProjectSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 import FerroLayer from "./FerroLayer"; // Modular effect
+import SpotlightLayer from "./SpotlightLayer";
 import "./App.css";
 
 const App = () => {
@@ -35,7 +36,8 @@ const App = () => {
 
   return (
     <>
-      <FerroLayer /> {/* Ferrofluid effect listener */}
+      {/* <FerroLayer /> */}
+      <SpotlightLayer />
       <Navbar />
       <main>
         <div className="ferro">
@@ -44,7 +46,7 @@ const App = () => {
         <div className="ferro">
           <AboutSection />
         </div>
-        <div className="ferro">
+        {/* <div className="ferro">
           <SkillsSection />
         </div>
         <div className="ferro">
@@ -52,11 +54,11 @@ const App = () => {
         </div>
         <div className="ferro">
           <ContactSection />
-        </div>
+        </div> */}
       </main>
-      <div className="ferro">
+      {/* <div className="ferro">
         <Footer />
-      </div>
+      </div> */}
     </>
   );
 };
