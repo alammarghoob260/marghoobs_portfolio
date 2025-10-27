@@ -46,7 +46,7 @@ const App = () => {
         <div className="ferro">
           <AboutSection />
         </div>
-        {/* <div className="ferro">
+        <div className="ferro">
           <SkillsSection />
         </div>
         <div className="ferro">
@@ -54,7 +54,7 @@ const App = () => {
         </div>
         <div className="ferro">
           <ContactSection />
-        </div> */}
+        </div>
       </main>
       {/* <div className="ferro">
         <Footer />
