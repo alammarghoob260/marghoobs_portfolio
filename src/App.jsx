@@ -6,7 +6,7 @@ import SkillsSection from "./components/SkillsSection";
 import ProjectsSection from "./components/ProjectSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
-import FerroLayer from "./FerroLayer";
+import FerroLayer from "./FerroLayer"; // Modular effect
 import "./App.css";
 
 const App = () => {
@@ -35,16 +35,28 @@ const App = () => {
 
   return (
     <>
-      <FerroLayer /> {/* <-- add ferrofluid layer here */}
+      <FerroLayer /> {/* Ferrofluid effect listener */}
       <Navbar />
       <main>
-        <HeroSection />
-        <AboutSection />
-        <SkillsSection />
-        <ProjectsSection />
-        <ContactSection />
+        <div className="ferro">
+          <HeroSection />
+        </div>
+        <div className="ferro">
+          <AboutSection />
+        </div>
+        <div className="ferro">
+          <SkillsSection />
+        </div>
+        <div className="ferro">
+          <ProjectsSection />
+        </div>
+        <div className="ferro">
+          <ContactSection />
+        </div>
       </main>
-      <Footer />
+      <div className="ferro">
+        <Footer />
+      </div>
     </>
   );
 };
