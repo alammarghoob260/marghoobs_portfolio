@@ -56,9 +56,9 @@ const App = () => {
           <ContactSection />
         </div>
       </main>
-      {/* <div className="ferro">
+      <div className="ferro">
         <Footer />
-      </div> */}
+      </div>
     </>
   );
 };

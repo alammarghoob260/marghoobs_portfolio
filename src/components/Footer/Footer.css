@@ -55,3 +55,50 @@
 .footer.light-mode:hover {
   color: #374151;
 }
+
+.footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.95rem;
+  color: #d1d5db;
+  background-color: #0f0f0f;
+  line-height: 1.6;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 0.5rem 0;
+}
+
+.footer-icon {
+  height: 20px;
+  width: 20px;
+  object-fit: contain;
+  vertical-align: middle;
+  opacity: 0.9;
+}
+
+.footer-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-weight: 500;
+  color: #d1d5db;
+  margin: 0.5rem 0;
+  text-align: center;
+}
+
+.footer-icon-inline {
+  height: 18px;
+  width: 18px;
+  object-fit: contain;
+  vertical-align: middle;
+  margin-left: 0.3rem;
+}
