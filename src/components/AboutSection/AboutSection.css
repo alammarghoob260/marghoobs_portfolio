@@ -40,7 +40,7 @@
 /* Frosted Info Boxes */
 .info-box {
   background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(226, 228, 232);
   border-radius: 1rem;
   padding: 1.5rem;
   backdrop-filter: blur(10px);

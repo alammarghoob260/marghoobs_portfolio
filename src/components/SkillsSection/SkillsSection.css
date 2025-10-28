@@ -84,7 +84,7 @@
 
 .category-card {
   background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 0.1px solid rgba(255, 255, 255);
   border-radius: 1rem;
   padding: 1.5rem;
   width: 280px;

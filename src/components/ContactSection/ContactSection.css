@@ -59,7 +59,7 @@
 .contact-form {
   padding: 2.5rem;
   border-radius: 1rem;
-  border: 1px solid rgba(147, 51, 234, 0.3);
+  border: 1px solid rgba(255, 255, 255);
   background: linear-gradient(
     135deg,
     rgba(147, 51, 234, 0.08),
@@ -87,7 +87,7 @@
   width: 100%;
   padding: 0.875rem 1rem;
   border-radius: 0.5rem;
-  border: 1px solid rgba(147, 51, 234, 0.3);
+  border: 1px solid rgba(255,255,255);
   background-color: rgba(0, 0, 0, 0.5);
   color: #ffffff;
   font-size: 1rem;
@@ -103,8 +103,8 @@
 .form-input:focus,
 .form-textarea:focus {
   outline: none;
-  border-color: #22d3ee;
-  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.1);
+  border-color: white;
+  box-shadow: 0 0 0 3px rgb(200, 211, 213);
   background-color: rgba(0, 0, 0, 0.7);
 }
 
@@ -172,7 +172,7 @@
     rgba(34, 211, 238, 0.1),
     rgba(147, 51, 234, 0.1)
   );
-  border: 1px solid rgba(34, 211, 238, 0.3);
+  border: 1px solid rgba(255,255,255);
   color: #22d3ee;
 }
 
@@ -193,7 +193,7 @@
     rgba(168, 85, 247, 0.1),
     rgba(236, 72, 153, 0.1)
   );
-  border: 1px solid rgba(168, 85, 247, 0.3);
+  border: 1px solid rgba(255,255,255);
   color: #a855f7;
 }
 
@@ -211,7 +211,7 @@
 .contact-details {
   padding: 2rem;
   border-radius: 1rem;
-  border: 1px solid rgba(147, 51, 234, 0.2);
+  border: 1px solid rgba(255,255,255);
   background: linear-gradient(
     135deg,
     rgba(236, 72, 153, 0.05),
@@ -278,7 +278,7 @@
     rgba(168, 85, 247, 0.05),
     rgba(236, 72, 153, 0.05)
   );
-  border-color: rgba(168, 85, 247, 0.2);
+  border-color: rgba(255,255,255);
   box-shadow: 0 10px 40px rgba(124, 58, 237, 0.1);
 }
 
@@ -290,7 +290,7 @@
 .contact-section.light-mode .form-textarea {
   background-color: #ffffff;
   color: #111827;
-  border-color: rgba(168, 85, 247, 0.2);
+  border-color: rgba(255,255,255);
 }
 
 .contact-section.light-mode .form-input:focus,

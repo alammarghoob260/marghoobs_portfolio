@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaEnvelope, FaPhone, FaLinkedin, FaRobot } from "react-icons/fa";
+import { FaRobot } from "react-icons/fa";
 import "./AboutSection.css";
 
 const AboutSection = () => (
@@ -67,24 +67,6 @@ const AboutSection = () => (
             </ul>
           </div>
         </div>
-      </div>
-
-      {/* Contact Icons */}
-      <div className="contact-bar">
-        <a href="mailto:your.email@example.com" className="contact-icon">
-          <FaEnvelope />
-        </a>
-        <a href="tel:+919876543210" className="contact-icon">
-          <FaPhone />
-        </a>
-        <a
-          href="https://linkedin.com/in/yourprofile"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="contact-icon"
-        >
-          <FaLinkedin />
-        </a>
       </div>
     </motion.div>
   </section>
