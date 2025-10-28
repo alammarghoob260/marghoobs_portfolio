@@ -1,8 +1,9 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaLightbulb, FaRobot } from "react-icons/fa";
+import { useSearch } from "../Search/SearchContext";
 import "./HeroSection.css";
 
-// 🔹 NEW: Scroll function added
 const HeroSection = () => {
   const scrollToSection = (id) => {
     const target = document.getElementById(id);
@@ -11,9 +12,20 @@ const HeroSection = () => {
     }
   };
 
+  // ✅ Register searchable content
+  const { registerSearchItem } = useSearch();
+
+  useEffect(() => {
+    registerSearchItem({
+      id: "home",
+      title: "Hero",
+      content:
+        "Hi, I'm Marghoob Alam. Frontend Developer | React.js Specialist. 3+ years experience building scalable, responsive web applications. Leveraging AI to enhance development workflows & productivity.",
+    });
+  }, []);
+
   return (
     <section id="home" className="hero-section">
-      {/* 🔹 Top Frosted Tag */}
       <motion.div
         className="hero-tag"
         initial={{ opacity: 0, y: -20 }}
@@ -24,7 +36,6 @@ const HeroSection = () => {
         <span>AI Powered Developer</span>
       </motion.div>
 
-      {/* 🔹 Main Heading */}
       <motion.h1
         className="hero-title"
         initial={{ opacity: 0, y: -40 }}
@@ -35,7 +46,6 @@ const HeroSection = () => {
         <span className="hero-name">Marghoob Alam</span>
       </motion.h1>
 
-      {/* 🔹 Role */}
       <motion.h2
         className="hero-role"
         initial={{ opacity: 0, y: 20 }}
@@ -45,7 +55,6 @@ const HeroSection = () => {
         Frontend Developer | React.js Specialist
       </motion.h2>
 
-      {/* 🔹 Experience Summary */}
       <motion.p
         className="hero-description"
         initial={{ opacity: 0, y: 20 }}
@@ -56,7 +65,6 @@ const HeroSection = () => {
         with modern technologies.
       </motion.p>
 
-      {/* 🔹 AI Enhancement Box */}
       <motion.div
         className="hero-ai-box"
         initial={{ opacity: 0, y: 20 }}
@@ -69,14 +77,12 @@ const HeroSection = () => {
         </span>
       </motion.div>
 
-      {/* 🔹 Buttons */}
       <motion.div
         className="hero-buttons"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.8 }}
       >
-        {/* ✅ CHANGE #1: Scroll to Contact Section */}
         <motion.button
           type="button"
           className="hero-btn-primary"
@@ -90,7 +96,6 @@ const HeroSection = () => {
           Get In Touch
         </motion.button>
 
-        {/* ✅ CHANGE #2: Scroll to Projects Section */}
         <motion.button
           type="button"
           className="hero-btn-secondary"

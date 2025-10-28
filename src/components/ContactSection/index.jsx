@@ -1,5 +1,6 @@
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useSearch } from "../Search/SearchContext";
 import "./ContactSection.css";
 
 const ContactSection = () => {
@@ -27,6 +28,18 @@ const ContactSection = () => {
     window.location.href = mailtoLink;
     setFormData({ name: "", email: "", subject: "", message: "" });
   };
+
+  // ✅ Register searchable contact info
+  const { registerSearchItem } = useSearch();
+
+  useEffect(() => {
+    registerSearchItem({
+      id: "contact",
+      title: "Contact",
+      content:
+        "Reach out via email, phone, GitHub, or LinkedIn. Email: alammarghoob260@gmail.com. Phone: +91 9038257967. GitHub: alammarghoob260. LinkedIn: marghoob-alam-122688157. Open to collaborations, frontend projects, and meaningful conversations.",
+    });
+  }, []);
 
   return (
     <section id="contact" className="contact-section">

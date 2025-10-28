@@ -8,6 +8,7 @@ import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 import FerroLayer from "./FerroLayer"; // Modular effect
 import SpotlightLayer from "./SpotlightLayer";
+import { SearchProvider } from "./components/Search/SearchContext";
 import "./App.css";
 
 const App = () => {
@@ -35,7 +36,7 @@ const App = () => {
   }, []);
 
   return (
-    <>
+    <SearchProvider>
       {/* <FerroLayer /> */}
       <SpotlightLayer />
       <Navbar />
@@ -59,7 +60,7 @@ const App = () => {
       <div className="ferro">
         <Footer />
       </div>
-    </>
+    </SearchProvider>
   );
 };
 

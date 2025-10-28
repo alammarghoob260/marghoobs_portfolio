@@ -1,7 +1,34 @@
+import { useEffect } from "react";
 import "./ProjectSection.css";
 import { projects } from "../data/project";
+import { useSearch } from "../Search/SearchContext";
 
 const ProjectsSection = () => {
+  const { registerSearchItem } = useSearch();
+
+  useEffect(() => {
+    const allProjects = [];
+
+    // ✅ Flatten all project data into searchable text
+    Object.values(projects).forEach((group) => {
+      group.items.forEach((proj) => {
+        allProjects.push(
+          `${proj.name} (${group.company}) — ${
+            proj.description
+          }. Tech: ${proj.tech.join(", ")}. Highlights: ${proj.highlights.join(
+            ", "
+          )}`
+        );
+      });
+    });
+
+    registerSearchItem({
+      id: "projects",
+      title: "Projects",
+      content: allProjects.join(" | "),
+    });
+  }, []);
+
   const renderGroup = (group) => (
     <div className="projects-group">
       <div className="group-header">

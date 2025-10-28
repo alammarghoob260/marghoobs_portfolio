@@ -1,7 +1,25 @@
+import { useEffect } from "react";
 import "./SkillsSection.css";
 import { skills } from "../data/skills";
+import { useSearch } from "../Search/SearchContext";
 
 const SkillsSection = () => {
+  const { registerSearchItem } = useSearch();
+
+  useEffect(() => {
+    // ✅ Flatten skills into searchable text
+    const progressSkills = skills.progress.map((s) => s.name).join(", ");
+    const categorySkills = skills.categories
+      .map((cat) => `${cat.title}: ${cat.items.map((i) => i.name).join(", ")}`)
+      .join(" | ");
+
+    registerSearchItem({
+      id: "skills",
+      title: "Skills",
+      content: `Technical skills include: ${progressSkills}. Categorized skills: ${categorySkills}.`,
+    });
+  }, []);
+
   return (
     <section id="skills" className="skills-section">
       <h2 className="skills-title">Technical Skills</h2>
