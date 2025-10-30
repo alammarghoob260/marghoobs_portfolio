@@ -1,9 +1,20 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useSearch } from "../Search/SearchContext";
+import { useTranslation } from "react-i18next";
+import i18n from "../../i18n";
 import "./ContactSection.css";
 
+// ✅ Import translation files
+import en from "./translation/en.json";
+import hi from "./translation/hi.json";
+import bn from "./translation/bn.json";
+import ur from "./translation/ur.json";
+
 const ContactSection = () => {
+  const { registerSearchItem } = useSearch();
+  const { t } = useTranslation("contact");
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -23,23 +34,28 @@ const ContactSection = () => {
     const mailtoLink = `mailto:alammarghoob260@gmail.com?subject=${encodeURIComponent(
       formData.subject
     )}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      `${t("form_name")}: ${formData.name}\n${t("form_email")}: ${
+        formData.email
+      }\n\n${t("form_message")}:\n${formData.message}`
     )}`;
     window.location.href = mailtoLink;
     setFormData({ name: "", email: "", subject: "", message: "" });
   };
 
-  // ✅ Register searchable contact info
-  const { registerSearchItem } = useSearch();
-
   useEffect(() => {
+    // ✅ Inject translations
+    i18n.addResourceBundle("en", "contact", en, true, true);
+    i18n.addResourceBundle("hi", "contact", hi, true, true);
+    i18n.addResourceBundle("bn", "contact", bn, true, true);
+    i18n.addResourceBundle("ur", "contact", ur, true, true);
+
+    // ✅ Register searchable content
     registerSearchItem({
       id: "contact",
-      title: "Contact",
-      content:
-        "Reach out via email, phone, GitHub, or LinkedIn. Email: alammarghoob260@gmail.com. Phone: +91 9038257967. GitHub: alammarghoob260. LinkedIn: marghoob-alam-122688157. Open to collaborations, frontend projects, and meaningful conversations.",
+      title: t("search_title"),
+      content: t("search_content"),
     });
-  }, []);
+  }, [registerSearchItem, t]);
 
   return (
     <section id="contact" className="contact-section">
@@ -49,11 +65,8 @@ const ContactSection = () => {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="contact-title">Contact Me</h2>
-        <p className="contact-text">
-          Feel free to reach out via email, phone, GitHub, or LinkedIn. I’m
-          always open to new opportunities and collaborations.
-        </p>
+        <h2 className="contact-title">{t("title")}</h2>
+        <p className="contact-text">{t("intro")}</p>
 
         <div className="contact-content">
           <motion.form
@@ -66,14 +79,14 @@ const ContactSection = () => {
             {/* Form Fields */}
             <div className="form-group">
               <label htmlFor="name" className="form-label">
-                Your Name *
+                {t("form_name")} *
               </label>
               <input
                 type="text"
                 id="name"
                 name="name"
                 className="form-input"
-                placeholder="John Doe"
+                placeholder={t("placeholder_name")}
                 value={formData.name}
                 onChange={handleChange}
                 required
@@ -83,14 +96,14 @@ const ContactSection = () => {
 
             <div className="form-group">
               <label htmlFor="email" className="form-label">
-                Your Email *
+                {t("form_email")} *
               </label>
               <input
                 type="email"
                 id="email"
                 name="email"
                 className="form-input"
-                placeholder="john@example.com"
+                placeholder={t("placeholder_email")}
                 value={formData.email}
                 onChange={handleChange}
                 required
@@ -100,14 +113,14 @@ const ContactSection = () => {
 
             <div className="form-group">
               <label htmlFor="subject" className="form-label">
-                Subject *
+                {t("form_subject")} *
               </label>
               <input
                 type="text"
                 id="subject"
                 name="subject"
                 className="form-input"
-                placeholder="Project Inquiry"
+                placeholder={t("placeholder_subject")}
                 value={formData.subject}
                 onChange={handleChange}
                 required
@@ -116,23 +129,23 @@ const ContactSection = () => {
 
             <div className="form-group">
               <label htmlFor="message" className="form-label">
-                Message *
+                {t("form_message")} *
               </label>
               <textarea
                 id="message"
                 name="message"
                 className="form-textarea"
-                placeholder="Tell me about your project..."
+                placeholder={t("placeholder_message")}
                 rows="5"
                 value={formData.message}
                 onChange={handleChange}
                 required
-                aria-label="Message"
+                aria-label={t("form_message")}
               ></textarea>
             </div>
 
             <button type="submit" className="form-submit">
-              Send Message
+              {t("form_submit")}
             </button>
           </motion.form>
 
@@ -191,16 +204,8 @@ const ContactSection = () => {
             </div>
 
             <div className="contact-details">
-              <h3 className="contact-details-title">Get In Touch</h3>
-              <p className="contact-details-text">
-                💡 I'm always open to exciting projects, fresh ideas, and
-                meaningful collaborations. Whether you're exploring a new
-                venture, seeking a reliable frontend partner 👨‍💻, or simply want
-                to connect 🤝, feel free to reach out. I value thoughtful
-                conversations 💬 and enjoy helping others bring their vision to
-                life 🌱. A quick hello 👋 or a detailed inquiry — either way,
-                I’d love to hear from you and see where it leads.
-              </p>
+              <h3 className="contact-details-title">{t("details_title")}</h3>
+              <p className="contact-details-text">{t("details_text")}</p>
             </div>
           </motion.div>
         </div>
