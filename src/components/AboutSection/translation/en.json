@@ -1,0 +1,13 @@
+{
+  "title": "About Me",
+  "intro": "I'm a frontend developer with over 3 years of experience specializing in React.js and modern web technologies. Currently working at PwC India, I focus on building scalable, user-friendly applications that solve real business problems. I’m involved in the full development lifecycle — from requirement analysis to production deployment — and I love creating interactive dashboards, data visualizations, and responsive interfaces.",
+  "ai_heading": "AI-Enhanced Development",
+  "ai_text": "I actively leverage AI tools and assistants to enhance my development workflow, improve code quality, accelerate problem-solving, and stay at the cutting edge of technology. This approach enables me to deliver superior user experiences faster while continuously learning and adapting to new technologies.",
+  "edu_heading": "Education",
+  "edu_1": "Bachelor in Computer Application",
+  "edu_2": "BP Poddar Institute of Management & Technology",
+  "edu_3": "CGPA: 1.8 (2018–2021)",
+  "cert_heading": "Certification",
+  "cert_1": "React Basics by Meta",
+  "cert_link": "View Certificate"
+}
