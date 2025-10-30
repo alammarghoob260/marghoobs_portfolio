@@ -6,25 +6,24 @@ import MoonIcon from "../../assets/MoonIcon";
 import { useLanguage } from "../TranslationContext/LanguageContext";
 import { useTranslation } from "react-i18next";
 import i18n from "../../i18n";
-
-// ✅ Import translation files
+import Select, { components } from "react-select";
+import { Globe } from "react-feather";
+import { useTheme } from "../Theme/ThemeContext";
 import en from "./translation/en.json";
 import hi from "./translation/hi.json";
 import bn from "./translation/bn.json";
 import ur from "./translation/ur.json";
-
 import "./Navbar.css";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(true);
   const [query, setQuery] = useState("");
   const searchRef = useRef(null);
   const { searchData } = useSearch();
   const { language, changeLanguage } = useLanguage();
   const { t } = useTranslation("navbar");
+  const { darkMode, toggleTheme } = useTheme(); // ✅ Global theme state
 
-  // ✅ Load translations
   useEffect(() => {
     i18n.addResourceBundle("en", "navbar", en, true, true);
     i18n.addResourceBundle("hi", "navbar", hi, true, true);
@@ -48,6 +47,22 @@ const Navbar = () => {
     window.addEventListener("keydown", handleShortcut);
     return () => window.removeEventListener("keydown", handleShortcut);
   }, []);
+
+  const languageOptions = [
+    { value: "en", label: "🇬🇧 EN" },
+    { value: "hi", label: "🇮🇳 हिन्दी" },
+    { value: "bn", label: "🇧🇩 বাংলা" },
+    { value: "ur", label: "🇵🇰 اردو" },
+  ];
+
+  const SingleValue = (props) => (
+    <components.SingleValue {...props}>
+      <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+        <Globe size={16} color="#ccc" />
+        {props.data.label}
+      </div>
+    </components.SingleValue>
+  );
 
   return (
     <nav className="navbar">
@@ -92,7 +107,7 @@ const Navbar = () => {
           {/* 🌗 Theme Toggle */}
           <button
             className={`theme-toggle ${darkMode ? "dark" : "light"}`}
-            onClick={() => setDarkMode(!darkMode)}
+            onClick={toggleTheme}
             aria-label="Toggle Theme"
           >
             <span className="toggle-icon">
@@ -101,16 +116,54 @@ const Navbar = () => {
           </button>
 
           {/* 🌐 Language Switcher */}
-          <select
-            className="language-switcher"
-            value={language}
-            onChange={(e) => changeLanguage(e.target.value)}
-          >
-            <option value="en">EN</option>
-            <option value="hi">हिन्दी</option>
-            <option value="bn">বাংলা</option>
-            <option value="ur">اردو</option>
-          </select>
+          <Select
+            className="language-switcher-select"
+            classNamePrefix="lang"
+            options={languageOptions}
+            value={languageOptions.find((opt) => opt.value === language)}
+            onChange={(opt) => changeLanguage(opt.value)}
+            isSearchable={false}
+            aria-label="Language Switcher"
+            components={{ SingleValue }}
+            styles={{
+              control: (base) => ({
+                ...base,
+                backgroundColor: "rgba(255,255,255,0.05)",
+                borderColor: "rgba(255,255,255,0.2)",
+                color: "#e0e0e0",
+                backdropFilter: "blur(6px)",
+                borderRadius: "6px",
+                fontSize: "0.9rem",
+                minWidth: "120px",
+                cursor: "pointer",
+              }),
+              menu: (base) => ({
+                ...base,
+                backgroundColor: "#1e1e1e",
+                borderRadius: "6px",
+                boxShadow: "0 4px 12px rgba(0,0,0,0.4)",
+                zIndex: 9999,
+              }),
+              option: (base, state) => ({
+                ...base,
+                backgroundColor: state.isFocused ? "#333" : "#1e1e1e",
+                color: "#e0e0e0",
+                padding: "8px 12px",
+                cursor: "pointer",
+              }),
+              singleValue: (base) => ({
+                ...base,
+                color: "#e0e0e0",
+              }),
+              dropdownIndicator: (base) => ({
+                ...base,
+                color: "#ccc",
+              }),
+              indicatorSeparator: () => ({
+                display: "none",
+              }),
+            }}
+          />
         </div>
 
         {/* 🔹 Mobile Hamburger */}
@@ -142,7 +195,7 @@ const Navbar = () => {
         </div>
       )}
 
-      {/* 🔎 Modular Search Results */}
+      {/* 🔎 Search Results */}
       <SearchResults
         query={query}
         results={results}

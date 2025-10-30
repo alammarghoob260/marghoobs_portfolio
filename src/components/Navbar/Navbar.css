@@ -23,7 +23,7 @@
   gap: 1rem;
 }
 
-/* 🔹 Logo (extreme left) */
+/* 🔹 Logo */
 .navbar-left {
   flex-shrink: 0;
 }
@@ -39,7 +39,7 @@
   white-space: nowrap;
 }
 
-/* 🔍 Search Bar (center) */
+/* 🔍 Search Bar */
 .navbar-search {
   flex: 1;
   display: flex;
@@ -110,7 +110,7 @@
   box-shadow: 0 0 8px rgba(34, 211, 238, 0.8);
 }
 
-/* 🔹 Theme Toggle (extreme right) */
+/* 🔹 Theme Toggle */
 .theme-toggle {
   background-color: transparent;
   border: none;
@@ -133,7 +133,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: none;
 }
 
 .theme-toggle svg {
@@ -256,13 +255,60 @@
   text-align: center;
 }
 
-.language-switcher {
+/* 🔹 react-select container */
+.language-switcher-select {
   margin-left: 1rem;
-  padding: 4px 8px;
-  border-radius: 4px;
-  background: transparent;
-  color: inherit;
-  border: 1px solid #ccc;
+  min-width: 120px;
   font-size: 0.9rem;
+}
+
+/* 🔹 react-select internal class prefix: lang__ */
+.lang__control {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  backdrop-filter: blur(6px);
+  color: #e0e0e0;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lang__control:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.lang__single-value {
+  color: #e0e0e0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lang__menu {
+  background-color: #1e1e1e;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+}
+
+.lang__option {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.lang__option--is-focused {
+  background-color: #333;
+  color: #ffffff;
+}
+
+.lang__dropdown-indicator {
+  color: #ccc;
+}
+
+.lang__indicator-separator {
+  display: none;
 }

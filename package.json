@@ -16,8 +16,10 @@
     "react": "^19.1.1",
     "react-auto-google-translate": "^1.0.3",
     "react-dom": "^19.1.1",
+    "react-feather": "^2.0.10",
     "react-i18next": "^16.2.2",
-    "react-icons": "^5.5.0"
+    "react-icons": "^5.5.0",
+    "react-select": "^5.10.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
