@@ -1,18 +1,36 @@
 import { useState, useEffect, useRef } from "react";
-import { useSearch } from "../Search/SearchContext"; // ✅ Context
-import SearchResults from "../Search/SearchResults"; // ✅ NEW: Import component
-import "./Navbar.css";
+import { useSearch } from "../Search/SearchContext";
+import SearchResults from "../Search/SearchResults";
 import SunIcon from "../../assets/SunIcon";
 import MoonIcon from "../../assets/MoonIcon";
+import { useLanguage } from "../TranslationContext/LanguageContext";
+import { useTranslation } from "react-i18next";
+import i18n from "../../i18n";
+
+// ✅ Import translation files
+import en from "./translation/en.json";
+import hi from "./translation/hi.json";
+import bn from "./translation/bn.json";
+import ur from "./translation/ur.json";
+
+import "./Navbar.css";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(true);
   const [query, setQuery] = useState("");
   const searchRef = useRef(null);
-  const links = ["Home", "About", "Skills", "Projects", "Contact"];
-
   const { searchData } = useSearch();
+  const { language, changeLanguage } = useLanguage();
+  const { t } = useTranslation("navbar");
+
+  // ✅ Load translations
+  useEffect(() => {
+    i18n.addResourceBundle("en", "navbar", en, true, true);
+    i18n.addResourceBundle("hi", "navbar", hi, true, true);
+    i18n.addResourceBundle("bn", "navbar", bn, true, true);
+    i18n.addResourceBundle("ur", "navbar", ur, true, true);
+  }, []);
 
   const results = searchData.filter(
     (item) =>
@@ -36,14 +54,14 @@ const Navbar = () => {
       <div className="navbar-container">
         {/* 🔹 Left: Logo */}
         <div className="navbar-left">
-          <div className="navbar-logo">Portfolio</div>
+          <div className="navbar-logo">{t("logo")}</div>
         </div>
 
         {/* 🔍 Center: Search Bar */}
         <div className="navbar-search">
           <input
             type="text"
-            placeholder="Search (Ctrl + K)"
+            placeholder={t("search_placeholder")}
             className="search-input"
             ref={searchRef}
             value={query}
@@ -51,20 +69,27 @@ const Navbar = () => {
           />
         </div>
 
-        {/* 🔹 Right: Links + Toggle */}
+        {/* 🔹 Right: Links + Theme + Language */}
         <div className="navbar-right">
           <div className="navbar-links-desktop">
-            {links.map((link) => (
-              <a
-                key={link}
-                href={`#${link.toLowerCase()}`}
-                className="navbar-link"
-              >
-                {link}
-              </a>
-            ))}
+            <a href="#home" className="navbar-link">
+              {t("nav_home")}
+            </a>
+            <a href="#about" className="navbar-link">
+              {t("nav_about")}
+            </a>
+            <a href="#skills" className="navbar-link">
+              {t("nav_skills")}
+            </a>
+            <a href="#projects" className="navbar-link">
+              {t("nav_projects")}
+            </a>
+            <a href="#contact" className="navbar-link">
+              {t("nav_contact")}
+            </a>
           </div>
 
+          {/* 🌗 Theme Toggle */}
           <button
             className={`theme-toggle ${darkMode ? "dark" : "light"}`}
             onClick={() => setDarkMode(!darkMode)}
@@ -74,6 +99,18 @@ const Navbar = () => {
               {darkMode ? <MoonIcon /> : <SunIcon />}
             </span>
           </button>
+
+          {/* 🌐 Language Switcher */}
+          <select
+            className="language-switcher"
+            value={language}
+            onChange={(e) => changeLanguage(e.target.value)}
+          >
+            <option value="en">EN</option>
+            <option value="hi">हिन्दी</option>
+            <option value="bn">বাংলা</option>
+            <option value="ur">اردو</option>
+          </select>
         </div>
 
         {/* 🔹 Mobile Hamburger */}
@@ -87,15 +124,21 @@ const Navbar = () => {
       {/* 🔹 Mobile Links */}
       {open && (
         <div className="navbar-links-mobile">
-          {links.map((link) => (
-            <a
-              key={link}
-              href={`#${link.toLowerCase()}`}
-              className="navbar-link"
-            >
-              {link}
-            </a>
-          ))}
+          <a href="#home" className="navbar-link">
+            {t("nav_home")}
+          </a>
+          <a href="#about" className="navbar-link">
+            {t("nav_about")}
+          </a>
+          <a href="#skills" className="navbar-link">
+            {t("nav_skills")}
+          </a>
+          <a href="#projects" className="navbar-link">
+            {t("nav_projects")}
+          </a>
+          <a href="#contact" className="navbar-link">
+            {t("nav_contact")}
+          </a>
         </div>
       )}
 

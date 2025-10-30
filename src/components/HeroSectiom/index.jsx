@@ -2,27 +2,42 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaLightbulb, FaRobot } from "react-icons/fa";
 import { useSearch } from "../Search/SearchContext";
+import { useTranslation } from "react-i18next";
+import i18n from "../../i18n"; // ✅ Import i18n instance
+
+// ✅ Import translation files
+import en from "./translation/en.json";
+import hi from "./translation/hi.json";
+import bn from "./translation/bn.json";
+import ur from "./translation/ur.json";
+
 import "./HeroSection.css";
 
 const HeroSection = () => {
+  const { t } = useTranslation("hero"); // ✅ Use namespace
+  const { registerSearchItem } = useSearch();
+
+  useEffect(() => {
+    // ✅ Load translations into i18n
+    i18n.addResourceBundle("en", "hero", en, true, true);
+    i18n.addResourceBundle("hi", "hero", hi, true, true);
+    i18n.addResourceBundle("bn", "hero", bn, true, true);
+    i18n.addResourceBundle("ur", "hero", ur, true, true);
+
+    // ✅ Register searchable content
+    registerSearchItem({
+      id: "home",
+      title: "Hero",
+      content: `${t("title")} ${t("role")} ${t("description")} ${t("ai_note")}`,
+    });
+  }, [registerSearchItem]);
+
   const scrollToSection = (id) => {
     const target = document.getElementById(id);
     if (target) {
       target.scrollIntoView({ behavior: "smooth" });
     }
   };
-
-  // ✅ Register searchable content
-  const { registerSearchItem } = useSearch();
-
-  useEffect(() => {
-    registerSearchItem({
-      id: "home",
-      title: "Hero",
-      content:
-        "Hi, I'm Marghoob Alam. Frontend Developer | React.js Specialist. 3+ years experience building scalable, responsive web applications. Leveraging AI to enhance development workflows & productivity.",
-    });
-  }, []);
 
   return (
     <section id="home" className="hero-section">
@@ -33,7 +48,7 @@ const HeroSection = () => {
         transition={{ duration: 0.6 }}
       >
         <FaLightbulb className="hero-tag-icon" />
-        <span>AI Powered Developer</span>
+        <span>{t("tagline")}</span>
       </motion.div>
 
       <motion.h1
@@ -42,7 +57,8 @@ const HeroSection = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        Hi, I'm <br />
+        {t("title").split("Marghoob Alam")[0]}
+        <br />
         <span className="hero-name">Marghoob Alam</span>
       </motion.h1>
 
@@ -52,7 +68,7 @@ const HeroSection = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        Frontend Developer | React.js Specialist
+        {t("role")}
       </motion.h2>
 
       <motion.p
@@ -61,8 +77,7 @@ const HeroSection = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
       >
-        3+ years of experience building scalable, responsive web applications
-        with modern technologies.
+        {t("description")}
       </motion.p>
 
       <motion.div
@@ -72,9 +87,7 @@ const HeroSection = () => {
         transition={{ duration: 0.8, delay: 0.6 }}
       >
         <FaRobot className="hero-ai-icon" />
-        <span>
-          Leveraging AI to enhance development workflows & productivity
-        </span>
+        <span>{t("ai_note")}</span>
       </motion.div>
 
       <motion.div
@@ -93,7 +106,7 @@ const HeroSection = () => {
           }}
           whileTap={{ scale: 0.95 }}
         >
-          Get In Touch
+          {t("btn_contact")}
         </motion.button>
 
         <motion.button
@@ -107,7 +120,7 @@ const HeroSection = () => {
           }}
           whileTap={{ scale: 0.95 }}
         >
-          View My Work
+          {t("btn_projects")}
         </motion.button>
       </motion.div>
     </section>

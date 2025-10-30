@@ -255,3 +255,14 @@
   color: #9ca3af;
   text-align: center;
 }
+
+.language-switcher {
+  margin-left: 1rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: transparent;
+  color: inherit;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
