@@ -1,78 +1,55 @@
 export const projects = {
   pwc: {
-    company: "PwC India",
+    company: "pwc_india",
     logo: "../../../public/pwc-logo.svg",
-    role: "Software Engineer",
-    tenure: "Nov 2023 – Present",
-    note: "Converted from contractor to full-time",
+    role: "software_engineer",
+    tenure: "nov_2023_present",
+    note: "converted_fulltime",
     items: [
       {
-        name: "CreditPulse Systems",
-        duration: "June 2023 – Present",
-        description:
-          "Credit analysis web application with interactive dashboards and financial metrics.",
-        highlights: [
-          "Led end-to-end frontend development and UI/UX integration",
-          "Designed dynamic visualizations for credit score trends and risk indicators",
-          "Delivered responsive, performance-optimized UI for cross-device usability",
-        ],
-        tech: ["ReactJS", "TypeScript", "ChakraUI", "REST APIs"],
+        name: "creditpulse",
+        duration: "jun_2023_present",
+        description: "creditpulse_desc",
+        highlights: ["creditpulse_h1", "creditpulse_h2", "creditpulse_h3"],
+        tech: ["reactjs", "typescript", "chakraui", "rest_apis"],
       },
       {
-        name: "Cyber Technology Rationaliser",
-        duration: "June 2022 – June 2023",
-        description:
-          "Software tool usage management and analysis platform with dynamic dashboards.",
-        highlights: [
-          "Engineered dashboards for software usage analysis",
-          "Built scalable frontend architecture for performance and testing",
-        ],
-        tech: ["ReactJS", "TypeScript", "Redux", "Chart.js", "Docker", ".NET"],
+        name: "cyber_rationaliser",
+        duration: "jun_2022_jun_2023",
+        description: "cyber_rationaliser_desc",
+        highlights: ["cyber_h1", "cyber_h2"],
+        tech: ["reactjs", "typescript", "redux", "chartjs", "docker", "dotnet"],
       },
     ],
   },
 
   softlogique: {
-    company: "Softlogique IT Solution Pvt. Ltd.",
+    company: "softlogique",
     logo: "../../../public/logo_softlogique.svg",
-    role: "Software Engineer",
-    tenure: "Sep 2022 – Nov 2022",
-    note: "Worked as contractor for ZMC India",
+    role: "software_engineer",
+    tenure: "sep_2022_nov_2022",
+    note: "contractor_zmc",
     items: [
       {
-        name: "HolidayVue",
-        duration: "Jan 2023 – Feb 2023",
-        description:
-          "ZMC employee holiday and shift management application with role-based access.",
-        highlights: [
-          "Admin panel for shift assignment and leave approval",
-          "Integrated with ZMC main functionality system",
-          "Mobile-first responsive interface",
-        ],
-        tech: ["Vue.js", "Vuetify", "Firebase"],
+        name: "holidayvue",
+        duration: "jan_2023_feb_2023",
+        description: "holidayvue_desc",
+        highlights: ["holidayvue_h1", "holidayvue_h2", "holidayvue_h3"],
+        tech: ["vuejs", "vuetify", "firebase"],
       },
       {
-        name: "Vault",
-        duration: "Jan 2023 – Jan 2023",
-        description:
-          "Fintech app for optimizing intranet team engagement with secure access.",
-        highlights: [
-          "Admin panel for group finance status",
-          "Integrated with ZMC main functionality system",
-          "Mobile-first responsive interface",
-        ],
-        tech: ["Vue.js", "Vuetify", "Firebase"],
+        name: "vault",
+        duration: "jan_2023_jan_2023",
+        description: "vault_desc",
+        highlights: ["vault_h1", "vault_h2", "vault_h3"],
+        tech: ["vuejs", "vuetify", "firebase"],
       },
       {
-        name: "Bidsimple",
-        duration: "Oct 2022 – Nov 2022",
-        description:
-          "Project management and document sharing platform with secure authentication.",
-        highlights: [
-          "Integrated with ZMC BMS system",
-          "Worked as contractor for ZMC India",
-        ],
-        tech: ["Vue.js", "Vuetify", "Firebase", "AWS S3", "AWS EC2"],
+        name: "bidsimple",
+        duration: "oct_2022_nov_2022",
+        description: "bidsimple_desc",
+        highlights: ["bidsimple_h1", "bidsimple_h2"],
+        tech: ["vuejs", "vuetify", "firebase", "aws_s3", "aws_ec2"],
       },
     ],
   },
