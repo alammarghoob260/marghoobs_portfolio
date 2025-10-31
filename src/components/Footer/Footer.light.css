@@ -5,9 +5,14 @@
 }
 
 .footer-light:hover {
-  color: #374151;
+  color: #7c3aed; /* ✅ violet hover */
 }
 
 .footer-light::before {
-  background: linear-gradient(to right, transparent, #a855f7, transparent);
+  background: linear-gradient(
+    to right,
+    #ec4899,
+    #a855f7,
+    #7c3aed
+  ); /* ✅ pink-violet gradient */
 }

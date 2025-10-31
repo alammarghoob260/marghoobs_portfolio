@@ -2,15 +2,15 @@
   background: linear-gradient(
     135deg,
     #f9fafb 0%,
-    #f3f4f6 30%,
-    #e5e7eb 60%,
-    #d1d5db 100%
+    #faf5ff 30%,
+    #fce7f3 60%,
+    #fce7f3 100%
   );
   color: #1f2937;
 }
 
 /* .about-section-light .about-title {
-  background: linear-gradient(to right, #0ea5e9, #6366f1);
+  background: linear-gradient(to right, #ec4899, #a855f7);  ✅ pink-violet gradient
 } */
 
 .about-section-light .about-text {
@@ -18,16 +18,16 @@
 }
 
 .about-section-light .info-box {
-  background-color: rgba(0, 0, 0, 0.03);
-  border: 1px solid #d1d5db;
+  background-color: rgba(236, 72, 153, 0.05); /* ✅ soft pink */
+  border: 1px solid #ec4899;
 }
 
 .about-section-light .info-icon {
-  color: #0ea5e9;
+  color: #ec4899; /* ✅ pink accent */
 }
 
 .about-section-light .info-heading {
-  color: #1f2937;
+  color: #7c3aed; /* ✅ violet heading */
 }
 
 .about-section-light .info-text,
@@ -36,11 +36,11 @@
 }
 
 .about-section-light .cert-link {
-  color: #0ea5e9;
+  color: #ec4899;
 }
 
 .about-section-light .cert-link:hover {
-  color: #0284c7;
+  color: #a855f7;
 }
 
 .about-section-light .contact-icon {
@@ -48,5 +48,5 @@
 }
 
 .about-section-light .contact-icon:hover {
-  color: #0ea5e9;
+  color: #ec4899;
 }

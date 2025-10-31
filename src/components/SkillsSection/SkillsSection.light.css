@@ -1,27 +1,37 @@
 .skills-section-light {
-  background: linear-gradient(135deg, #f9fafb, #f3f4f6, #e5e7eb, #d1d5db);
+  background: linear-gradient(
+    135deg,
+    #f9fafb,
+    #faf5ff,
+    #fce7f3,
+    #fce7f3
+  ); /* ✅ pink-violet gradient */
   color: #1f2937;
 }
 
 /* .skills-section-light .skills-title {
-  background: linear-gradient(to right, #0ea5e9, #6366f1);
+  background: linear-gradient(to right, #ec4899, #a855f7);  ✅ pink-violet gradient
 } */
 
 .skills-section-light .progress-bar {
-  background-color: #e5e7eb;
+  background-color: #fce7f3; /* ✅ soft pink */
 }
 
 .skills-section-light .progress-fill {
-  background: linear-gradient(to right, #0ea5e9, #6366f1);
+  background: linear-gradient(
+    to right,
+    #ec4899,
+    #a855f7
+  ); /* ✅ pink-violet fill */
 }
 
 .skills-section-light .category-card {
-  background-color: rgba(0, 0, 0, 0.03);
-  border: 0.1px solid #d1d5db;
+  background-color: rgba(236, 72, 153, 0.05); /* ✅ soft pink */
+  border: 1px solid #ec4899;
 }
 
 .skills-section-light .category-title {
-  color: #1f2937;
+  color: #7c3aed; /* ✅ violet title */
 }
 
 .skills-section-light .category-list {

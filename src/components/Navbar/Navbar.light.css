@@ -19,8 +19,8 @@
 }
 
 .navbar-light .search-input:focus {
-  border-color: #22d3ee;
-  box-shadow: 0 0 6px rgba(34, 211, 238, 0.4);
+  border-color: #ec4899;
+  box-shadow: 0 0 6px rgba(236, 72, 153, 0.4); /* ✅ pink glow */
 }
 
 /* 🔗 Navbar Links */
@@ -31,16 +31,16 @@
 }
 
 .navbar-light .navbar-link:hover {
-  color: #0f172a;
-  background-color: #e5e7eb;
+  color: #7c3aed; /* ✅ violet hover */
+  background-color: #f3f4f6;
   border-color: #d1d5db;
 }
 
 .navbar-light .navbar-link.active {
-  background-color: rgba(34, 211, 238, 0.15);
-  color: #0ea5e9;
-  border: 1px solid rgba(34, 211, 238, 0.4);
-  box-shadow: 0 0 6px rgba(34, 211, 238, 0.3);
+  background-color: rgba(236, 72, 153, 0.15); /* ✅ pink tint */
+  color: #ec4899;
+  border: 1px solid rgba(236, 72, 153, 0.4);
+  box-shadow: 0 0 6px rgba(236, 72, 153, 0.3);
 }
 
 /* 🌗 Theme Toggle */
@@ -49,18 +49,18 @@
 }
 
 .navbar-light .theme-toggle svg {
-  fill: #1f2937;
+  fill: #7c3aed; /* ✅ violet icon */
 }
 
 /* 🍔 Hamburger */
 .navbar-light .navbar-hamburger button {
-  background-color: #e0e7ff;
-  border: 1px solid #c7d2fe;
-  color: #4f46e5;
+  background-color: #fce7f3; /* ✅ soft pink */
+  border: 1px solid #ec4899;
+  color: #ec4899;
 }
 
 .navbar-light .navbar-hamburger button:hover {
-  background-color: #dbeafe;
+  background-color: #faf5ff; /* ✅ lavender blush */
 }
 
 /* 📱 Mobile Links */
@@ -74,14 +74,14 @@
 }
 
 .navbar-light .navbar-links-mobile .navbar-link:hover {
-  background-color: #e5e7eb;
+  background-color: #f3f4f6;
   border-color: #d1d5db;
 }
 
 .navbar-light .navbar-links-mobile .navbar-link.active {
-  background-color: rgba(34, 211, 238, 0.15);
-  color: #0ea5e9;
-  border-color: rgba(34, 211, 238, 0.4);
+  background-color: rgba(236, 72, 153, 0.15);
+  color: #ec4899;
+  border-color: rgba(236, 72, 153, 0.4);
 }
 
 /* 🔎 Search Results Dropdown */
@@ -96,7 +96,7 @@
 }
 
 .navbar-light .search-result-item:hover {
-  background-color: #e5e7eb;
+  background-color: #fce7f3; /* ✅ soft pink hover */
 }
 
 .navbar-light .no-results {
@@ -111,8 +111,8 @@
 }
 
 .navbar-light .lang__control:hover {
-  background-color: #e5e7eb;
-  border-color: #cbd5e1;
+  background-color: #faf5ff; /* ✅ lavender blush */
+  border-color: #ec4899;
 }
 
 .navbar-light .lang__single-value {
@@ -129,10 +129,10 @@
 }
 
 .navbar-light .lang__option--is-focused {
-  background-color: #e5e7eb;
+  background-color: #fce7f3; /* ✅ pink focus */
   color: #1f2937;
 }
 
 .navbar-light .lang__dropdown-indicator {
-  color: #4b5563;
+  color: #ec4899; /* ✅ pink indicator */
 }

@@ -1,19 +1,25 @@
 .projects-section-light {
-  background: linear-gradient(135deg, #f9fafb, #f3f4f6, #e5e7eb, #d1d5db);
+  background: linear-gradient(
+    135deg,
+    #f9fafb,
+    #faf5ff,
+    #fce7f3,
+    #fce7f3
+  ); /* ✅ pink-violet gradient */
   color: #1f2937;
 }
 
 /* .projects-section-light .projects-title {
-  background: linear-gradient(to right, #0ea5e9, #6366f1);
+  background: linear-gradient(to right, #ec4899, #a855f7);  ✅ pink-violet gradient
 } */
 
 .projects-section-light .projects-group {
-  border: 1px solid #d1d5db;
-  background-color: rgba(0, 0, 0, 0.03);
+  border: 1px solid #ec4899; /* ✅ pink border */
+  background-color: rgba(236, 72, 153, 0.05); /* ✅ soft pink */
 }
 
 .projects-section-light .group-title {
-  color: #1f2937;
+  color: #7c3aed; /* ✅ violet title */
 }
 
 .projects-section-light .group-meta {
@@ -21,12 +27,12 @@
 }
 
 .projects-section-light .project-card {
-  background-color: rgba(0, 0, 0, 0.03);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(236, 72, 153, 0.05); /* ✅ soft pink */
+  border: 1px solid rgba(236, 72, 153, 0.2); /* ✅ pink tint border */
 }
 
 .projects-section-light .project-name {
-  color: #1f2937;
+  color: #7c3aed; /* ✅ violet name */
 }
 
 .projects-section-light .project-company {
@@ -39,6 +45,10 @@
 }
 
 .projects-section-light .tech-badge {
-  background: linear-gradient(to right, #0ea5e9, #6366f1);
+  background: linear-gradient(
+    to right,
+    #ec4899,
+    #a855f7
+  ); /* ✅ pink-violet badge */
   color: #ffffff;
 }
