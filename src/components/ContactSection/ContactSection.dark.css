@@ -1,0 +1,113 @@
+.contact-section-dark {
+  background-color: #000000;
+  color: #d1d5db;
+}
+
+/* .contact-section-dark .contact-title {
+  background: linear-gradient(to right, #22d3ee, #a855f7);
+} */
+
+.contact-section-dark .contact-title::after {
+  background: linear-gradient(to right, #22d3ee, #a855f7);
+  box-shadow: 0 0 20px rgba(147, 51, 234, 0.5);
+}
+
+.contact-section-dark .contact-text {
+  color: #d1d5db;
+}
+
+.contact-section-dark .contact-form {
+  border: 1px solid rgba(255, 255, 255);
+  background: linear-gradient(
+    135deg,
+    rgba(147, 51, 234, 0.08),
+    rgba(34, 211, 238, 0.08)
+  );
+  box-shadow: 0 10px 40px rgba(147, 51, 234, 0.2);
+}
+
+.contact-section-dark .form-label {
+  color: #d1d5db;
+}
+
+.contact-section-dark .form-input,
+.contact-section-dark .form-textarea {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255);
+}
+
+.contact-section-dark .form-input:focus,
+.contact-section-dark .form-textarea:focus {
+  border-color: white;
+  box-shadow: 0 0 0 3px rgb(200, 211, 213);
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.contact-section-dark .form-submit {
+  background: linear-gradient(to right, #22d3ee, #a855f7);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(147, 51, 234, 0.5);
+}
+
+.contact-section-dark .form-submit:hover {
+  box-shadow: 0 6px 20px rgba(147, 51, 234, 0.7);
+}
+
+.contact-section-dark .contact-email {
+  background: linear-gradient(
+    135deg,
+    rgba(34, 211, 238, 0.1),
+    rgba(147, 51, 234, 0.1)
+  );
+  border: 1px solid rgba(255, 255, 255);
+  color: #22d3ee;
+}
+
+.contact-section-dark .contact-email:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(34, 211, 238, 0.2),
+    rgba(147, 51, 234, 0.2)
+  );
+  border-color: #22d3ee;
+  box-shadow: 0 10px 30px rgba(34, 211, 238, 0.3);
+}
+
+.contact-section-dark .contact-linkedin {
+  background: linear-gradient(
+    135deg,
+    rgba(168, 85, 247, 0.1),
+    rgba(236, 72, 153, 0.1)
+  );
+  border: 1px solid rgba(255, 255, 255);
+  color: #a855f7;
+}
+
+.contact-section-dark .contact-linkedin:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(168, 85, 247, 0.2),
+    rgba(236, 72, 153, 0.2)
+  );
+  border-color: #a855f7;
+  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.3);
+}
+
+.contact-section-dark .contact-details {
+  border: 1px solid rgba(255, 255, 255);
+  background: linear-gradient(
+    135deg,
+    rgba(236, 72, 153, 0.05),
+    rgba(147, 51, 234, 0.05)
+  );
+}
+
+.contact-section-dark .contact-details-title {
+  color: #ec4899;
+  text-shadow: 0 0 10px rgba(236, 72, 153, 0.5);
+}
+
+.contact-section-dark .contact-details-text {
+  color: #d1d5db;
+}

@@ -1,5 +1,5 @@
-import "./Footer.css";
 import { useTranslation } from "react-i18next";
+import { useTheme } from "../Theme/ThemeContext";
 import i18n from "../../i18n";
 
 // ✅ Import translation files
@@ -8,8 +8,14 @@ import hi from "./translation/hi.json";
 import bn from "./translation/bn.json";
 import ur from "./translation/ur.json";
 
+// ✅ Import scoped CSS files
+import "./Footer.common.css";
+import "./Footer.dark.css";
+import "./Footer.light.css";
+
 const Footer = () => {
   const { t } = useTranslation("footer");
+  const { darkMode } = useTheme();
 
   // ✅ Inject translations
   i18n.addResourceBundle("en", "footer", en, true, true);
@@ -18,8 +24,8 @@ const Footer = () => {
   i18n.addResourceBundle("ur", "footer", ur, true, true);
 
   return (
-    <footer className="footer">
-      <p>
+    <footer className={`footer ${darkMode ? "footer-dark" : "footer-light"}`}>
+      <p className={`footer-text ${darkMode ? "dark" : "light"}`}>
         &copy; {new Date().getFullYear()} Marghoob Alam. {t("rights")}
       </p>
 

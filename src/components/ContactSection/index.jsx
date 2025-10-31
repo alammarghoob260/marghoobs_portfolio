@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useSearch } from "../Search/SearchContext";
 import { useTranslation } from "react-i18next";
+import { useTheme } from "../Theme/ThemeContext";
 import i18n from "../../i18n";
-import "./ContactSection.css";
 
 // ✅ Import translation files
 import en from "./translation/en.json";
@@ -11,9 +11,15 @@ import hi from "./translation/hi.json";
 import bn from "./translation/bn.json";
 import ur from "./translation/ur.json";
 
+// ✅ Import scoped CSS files
+import "./ContactSection.common.css";
+import "./ContactSection.dark.css";
+import "./ContactSection.light.css";
+
 const ContactSection = () => {
   const { registerSearchItem } = useSearch();
   const { t } = useTranslation("contact");
+  const { darkMode } = useTheme();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -43,13 +49,11 @@ const ContactSection = () => {
   };
 
   useEffect(() => {
-    // ✅ Inject translations
     i18n.addResourceBundle("en", "contact", en, true, true);
     i18n.addResourceBundle("hi", "contact", hi, true, true);
     i18n.addResourceBundle("bn", "contact", bn, true, true);
     i18n.addResourceBundle("ur", "contact", ur, true, true);
 
-    // ✅ Register searchable content
     registerSearchItem({
       id: "contact",
       title: t("search_title"),
@@ -58,74 +62,52 @@ const ContactSection = () => {
   }, [registerSearchItem, t]);
 
   return (
-    <section id="contact" className="contact-section">
+    <section
+      id="contact"
+      className={`contact-section ${
+        darkMode ? "contact-section-dark" : "contact-section-light"
+      }`}
+    >
       <motion.div
-        className="contact-container"
+        className={`contact-container ${darkMode ? "dark" : "light"}`}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="contact-title">{t("title")}</h2>
-        <p className="contact-text">{t("intro")}</p>
+        <h2 className={`contact-title ${darkMode ? "dark" : "light"}`}>
+          {t("title")}
+        </h2>
+        <p className={`contact-text ${darkMode ? "dark" : "light"}`}>
+          {t("intro")}
+        </p>
 
         <div className="contact-content">
           <motion.form
-            className="contact-form"
+            className={`contact-form ${darkMode ? "dark" : "light"}`}
             onSubmit={handleSubmit}
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             {/* Form Fields */}
-            <div className="form-group">
-              <label htmlFor="name" className="form-label">
-                {t("form_name")} *
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                className="form-input"
-                placeholder={t("placeholder_name")}
-                value={formData.name}
-                onChange={handleChange}
-                required
-                autoComplete="name"
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="email" className="form-label">
-                {t("form_email")} *
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                className="form-input"
-                placeholder={t("placeholder_email")}
-                value={formData.email}
-                onChange={handleChange}
-                required
-                autoComplete="email"
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="subject" className="form-label">
-                {t("form_subject")} *
-              </label>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                className="form-input"
-                placeholder={t("placeholder_subject")}
-                value={formData.subject}
-                onChange={handleChange}
-                required
-              />
-            </div>
+            {["name", "email", "subject"].map((field) => (
+              <div key={field} className="form-group">
+                <label htmlFor={field} className="form-label">
+                  {t(`form_${field}`)} *
+                </label>
+                <input
+                  type={field === "email" ? "email" : "text"}
+                  id={field}
+                  name={field}
+                  className="form-input"
+                  placeholder={t(`placeholder_${field}`)}
+                  value={formData[field]}
+                  onChange={handleChange}
+                  required
+                  autoComplete={field}
+                />
+              </div>
+            ))}
 
             <div className="form-group">
               <label htmlFor="message" className="form-label">
@@ -150,7 +132,7 @@ const ContactSection = () => {
           </motion.form>
 
           <motion.div
-            className="contact-info"
+            className={`contact-info ${darkMode ? "dark" : "light"}`}
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
