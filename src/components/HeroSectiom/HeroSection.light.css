@@ -1,0 +1,71 @@
+.hero-section-light {
+  background: linear-gradient(
+    135deg,
+    #f9fafb 0%,
+    #f3f4f6 30%,
+    #e5e7eb 60%,
+    #d1d5db 100%
+  );
+  color: #1f2937;
+}
+
+.hero-section-light .hero-tag {
+  color: #1f2937;
+  background-color: rgba(0, 0, 0, 0.03);
+  border: 2px solid #d1d5db;
+}
+
+.hero-section-light .hero-tag-icon {
+  color: #facc15;
+}
+
+.hero-section-light .hero-title {
+  color: #111827;
+}
+
+.hero-section-light .hero-name {
+  background: linear-gradient(to right, #0ea5e9, #6366f1, #ec4899);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #111827; /* fallback for non-webkit browsers */
+  background-color: transparent; /* ✅ removes gradient box */
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.1); /* subtle glow for visibility */
+  display: inline-block;
+}
+
+.hero-section-light .hero-role {
+  color: #374151;
+}
+
+.hero-section-light .hero-description {
+  color: #4b5563;
+}
+
+.hero-section-light .hero-ai-box {
+  color: #1f2937;
+  background-color: rgba(0, 0, 0, 0.03);
+  border: 2px solid #d1d5db;
+}
+
+.hero-section-light .hero-ai-icon {
+  color: #0ea5e9;
+}
+
+.hero-section-light .hero-btn-primary,
+.hero-section-light .hero-btn-secondary {
+  background-color: #ec4899;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+}
+
+.hero-section-light .hero-btn-primary:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.hero-section-light .hero-btn-secondary:hover {
+  background-color: rgba(14, 165, 233, 0.1);
+  border-color: #0ea5e9;
+  color: #0ea5e9;
+}

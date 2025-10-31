@@ -3,28 +3,29 @@ import { motion } from "framer-motion";
 import { FaLightbulb, FaRobot } from "react-icons/fa";
 import { useSearch } from "../Search/SearchContext";
 import { useTranslation } from "react-i18next";
-import i18n from "../../i18n"; // ✅ Import i18n instance
+import { useTheme } from "../Theme/ThemeContext";
+import i18n from "../../i18n";
 
-// ✅ Import translation files
 import en from "./translation/en.json";
 import hi from "./translation/hi.json";
 import bn from "./translation/bn.json";
 import ur from "./translation/ur.json";
 
-import "./HeroSection.css";
+import "./HeroSection.common.css";
+import "./HeroSection.dark.css";
+import "./HeroSection.light.css";
 
 const HeroSection = () => {
-  const { t } = useTranslation("hero"); // ✅ Use namespace
+  const { t } = useTranslation("hero");
   const { registerSearchItem } = useSearch();
+  const { darkMode } = useTheme();
 
   useEffect(() => {
-    // ✅ Load translations into i18n
     i18n.addResourceBundle("en", "hero", en, true, true);
     i18n.addResourceBundle("hi", "hero", hi, true, true);
     i18n.addResourceBundle("bn", "hero", bn, true, true);
     i18n.addResourceBundle("ur", "hero", ur, true, true);
 
-    // ✅ Register searchable content
     registerSearchItem({
       id: "home",
       title: "Hero",
@@ -40,9 +41,14 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="hero-section">
+    <section
+      id="home"
+      className={`hero-section ${
+        darkMode ? "hero-section-dark" : "hero-section-light"
+      }`}
+    >
       <motion.div
-        className="hero-tag"
+        className={`hero-tag ${darkMode ? "dark" : "light"}`}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -52,18 +58,20 @@ const HeroSection = () => {
       </motion.div>
 
       <motion.h1
-        className="hero-title"
+        className={`hero-title ${darkMode ? "dark" : "light"}`}
         initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
         {t("title").split("Marghoob Alam")[0]}
         <br />
-        <span className="hero-name">Marghoob Alam</span>
+        <span className={`hero-name ${darkMode ? "dark" : "light"}`}>
+          Marghoob Alam
+        </span>
       </motion.h1>
 
       <motion.h2
-        className="hero-role"
+        className={`hero-role ${darkMode ? "dark" : "light"}`}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
@@ -72,7 +80,7 @@ const HeroSection = () => {
       </motion.h2>
 
       <motion.p
-        className="hero-description"
+        className={`hero-description ${darkMode ? "dark" : "light"}`}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
@@ -81,7 +89,7 @@ const HeroSection = () => {
       </motion.p>
 
       <motion.div
-        className="hero-ai-box"
+        className={`hero-ai-box ${darkMode ? "dark" : "light"}`}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.6 }}
@@ -91,18 +99,20 @@ const HeroSection = () => {
       </motion.div>
 
       <motion.div
-        className="hero-buttons"
+        className={`hero-buttons ${darkMode ? "dark" : "light"}`}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.8 }}
       >
         <motion.button
           type="button"
-          className="hero-btn-primary"
+          className={`hero-btn-primary ${darkMode ? "dark" : "light"}`}
           onClick={() => scrollToSection("contact")}
           whileHover={{
             scale: 1.05,
-            boxShadow: "0 0 20px rgba(255, 255, 255, 0.3)",
+            boxShadow: darkMode
+              ? "0 0 20px rgba(255, 255, 255, 0.3)"
+              : "0 0 20px rgba(0, 0, 0, 0.1)",
           }}
           whileTap={{ scale: 0.95 }}
         >
@@ -111,7 +121,7 @@ const HeroSection = () => {
 
         <motion.button
           type="button"
-          className="hero-btn-secondary"
+          className={`hero-btn-secondary ${darkMode ? "dark" : "light"}`}
           onClick={() => scrollToSection("projects")}
           whileHover={{
             scale: 1.05,

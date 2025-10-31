@@ -1,0 +1,71 @@
+.hero-section-dark {
+  background: linear-gradient(
+    135deg,
+    #000000 0%,
+    #0a0a0a 30%,
+    #111111 60%,
+    #1a1a1a 100%
+  );
+  color: #e5e7eb;
+}
+
+.hero-section-dark .hero-tag {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(251, 255, 255, 1);
+}
+
+.hero-section-dark .hero-tag-icon {
+  color: #facc15;
+}
+
+.hero-section-dark .hero-title {
+  color: #ffffff;
+}
+
+.hero-section-dark .hero-name {
+  background: linear-gradient(to right, #22d3ee, #a855f7, #ec4899);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #ffffff; /* fallback for non-webkit */
+  background-color: transparent; /* ✅ removes box */
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.2);
+  display: inline-block;
+}
+
+.hero-section-dark .hero-role {
+  color: #9ca3af;
+}
+
+.hero-section-dark .hero-description {
+  color: #d1d5db;
+}
+
+.hero-section-dark .hero-ai-box {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(251, 255, 255, 1);
+}
+
+.hero-section-dark .hero-ai-icon {
+  color: #22d3ee;
+}
+
+.hero-section-dark .hero-btn-primary,
+.hero-section-dark .hero-btn-secondary {
+  background-color: rgba(229, 66, 151);
+  border: 2px solid rgba(240, 240, 240, 0.15);
+  color: #ffffff;
+}
+
+.hero-section-dark .hero-btn-primary:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.hero-section-dark .hero-btn-secondary:hover {
+  background-color: rgba(34, 211, 238, 0.05);
+  border-color: #22d3ee;
+  color: #22d3ee;
+}

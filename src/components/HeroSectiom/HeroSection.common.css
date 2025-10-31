@@ -3,14 +3,6 @@
   width: 100vw;
   padding: 6rem 1.5rem 4rem;
   text-align: center;
-  color: #e5e7eb;
-  background: linear-gradient(
-    135deg,
-    #000000 0%,
-    #0a0a0a 30%,
-    #111111 60%,
-    #1a1a1a 100%
-  );
   overflow-x: hidden;
 }
 
@@ -23,9 +15,6 @@
   margin-bottom: 1.5rem;
   font-size: 0.85rem;
   font-weight: 500;
-  color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 2px solid rgba(251, 255, 255, 1);
   border-radius: 999px;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -33,7 +22,6 @@
 
 .hero-tag-icon {
   font-size: 1rem;
-  color: #facc15; /* yellow glow */
 }
 
 /* 🔹 Heading */
@@ -45,24 +33,31 @@
 }
 
 .hero-name {
-  background: linear-gradient(to right, #22d3ee, #a855f7, #ec4899);
+  background: linear-gradient(
+    to right,
+    #22d3ee,
+    #a855f7,
+    #ec4899
+  ); 
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: #ffffff; 
+  background-color: transparent;
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.2); 
+  display: inline-block;
 }
 
 /* 🔹 Role */
 .hero-role {
   font-size: 1.2rem;
   font-weight: 600;
-  color: #9ca3af;
   margin-bottom: 1rem;
 }
 
 /* 🔹 Experience Summary */
 .hero-description {
   font-size: 0.95rem;
-  color: #d1d5db;
   max-width: 700px;
   margin: 0 auto 2rem;
   line-height: 1.6;
@@ -77,9 +72,6 @@
   margin-bottom: 2rem;
   font-size: 0.9rem;
   font-weight: 500;
-  color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 2px solid rgba(251, 255, 255, 1);
   border-radius: 0.75rem;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -87,7 +79,6 @@
 
 .hero-ai-icon {
   font-size: 1rem;
-  color: #22d3ee;
 }
 
 /* 🔹 Buttons */
@@ -104,22 +95,8 @@
   font-size: 0.95rem;
   font-weight: 600;
   border-radius: 0.5rem;
-  border: 2px solid rgba(240, 240, 240, 0.15);
-  background-color: rgba(229, 66, 151);
-  color: #ffffff;
   cursor: pointer;
   transition: all 0.3s ease;
-}
-
-.hero-btn-primary:hover {
-  background-color: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.3);
-}
-
-.hero-btn-secondary:hover {
-  background-color: rgba(34, 211, 238, 0.05);
-  border-color: #22d3ee;
-  color: #22d3ee;
 }
 
 /* 🔹 Responsive */
