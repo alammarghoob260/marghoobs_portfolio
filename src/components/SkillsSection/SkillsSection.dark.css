@@ -1,0 +1,29 @@
+.skills-section-dark {
+  background: linear-gradient(135deg, #000000, #0a0a0a, #111111, #1a1a1a);
+  color: #e5e7eb;
+}
+
+/* .skills-section-dark .skills-title {
+  background: linear-gradient(to right, #22d3ee, #a855f7);
+} */
+
+.skills-section-dark .progress-bar {
+  background-color: #1f2937;
+}
+
+.skills-section-dark .progress-fill {
+  background: linear-gradient(to right, #22d3ee, #a855f7);
+}
+
+.skills-section-dark .category-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 0.1px solid rgba(255, 255, 255, 0.2);
+}
+
+.skills-section-dark .category-title {
+  color: #ffffff;
+}
+
+.skills-section-dark .category-list {
+  color: #d1d5db;
+}

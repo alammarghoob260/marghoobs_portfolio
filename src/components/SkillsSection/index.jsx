@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-import "./SkillsSection.css";
 import { skills } from "../data/skills";
 import { useSearch } from "../Search/SearchContext";
 import { useTranslation } from "react-i18next";
+import { useTheme } from "../Theme/ThemeContext";
 import i18n from "../../i18n";
 
 // ✅ Import translation files
@@ -11,18 +11,22 @@ import hi from "./translation/hi.json";
 import bn from "./translation/bn.json";
 import ur from "./translation/ur.json";
 
+// ✅ Import scoped CSS files
+import "./SkillsSection.common.css";
+import "./SkillsSection.dark.css";
+import "./SkillsSection.light.css";
+
 const SkillsSection = () => {
   const { registerSearchItem } = useSearch();
   const { t } = useTranslation("skills");
+  const { darkMode } = useTheme();
 
   useEffect(() => {
-    // ✅ Inject translations
     i18n.addResourceBundle("en", "skills", en, true, true);
     i18n.addResourceBundle("hi", "skills", hi, true, true);
     i18n.addResourceBundle("bn", "skills", bn, true, true);
     i18n.addResourceBundle("ur", "skills", ur, true, true);
 
-    // ✅ Register searchable content with translated strings
     const progressSkills = skills.progress.map((s) => t(s.name)).join(", ");
     const categorySkills = skills.categories
       .map(
@@ -41,14 +45,26 @@ const SkillsSection = () => {
   }, [registerSearchItem, t]);
 
   return (
-    <section id="skills" className="skills-section">
-      <h2 className="skills-title">{t("title")}</h2>
+    <section
+      id="skills"
+      className={`skills-section ${
+        darkMode ? "skills-section-dark" : "skills-section-light"
+      }`}
+    >
+      <h2 className={`skills-title ${darkMode ? "dark" : "light"}`}>
+        {t("title")}
+      </h2>
 
       {/* Progress Bars */}
-      <h3 className="skills-subheading">{t("progress_heading")}</h3>
+      <h3 className={`skills-subheading ${darkMode ? "dark" : "light"}`}>
+        {t("progress_heading")}
+      </h3>
       <div className="progress-grid">
         {skills.progress.map((skill, idx) => (
-          <div key={idx} className="progress-item">
+          <div
+            key={idx}
+            className={`progress-item ${darkMode ? "dark" : "light"}`}
+          >
             <div className="progress-label">
               <div className="skill-name">
                 <img
@@ -72,10 +88,15 @@ const SkillsSection = () => {
       </div>
 
       {/* Categorized Panels */}
-      <h3 className="skills-subheading">{t("category_heading")}</h3>
+      <h3 className={`skills-subheading ${darkMode ? "dark" : "light"}`}>
+        {t("category_heading")}
+      </h3>
       <div className="category-grid">
         {skills.categories.map((category, idx) => (
-          <div key={idx} className="category-card">
+          <div
+            key={idx}
+            className={`category-card ${darkMode ? "dark" : "light"}`}
+          >
             <div className="category-icon" aria-label={t(category.title)}>
               {category.icon}
             </div>
