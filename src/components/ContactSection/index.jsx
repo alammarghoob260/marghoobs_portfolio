@@ -37,6 +37,7 @@ const ContactSection = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     const mailtoLink = `mailto:alammarghoob260@gmail.com?subject=${encodeURIComponent(
       formData.subject
     )}&body=${encodeURIComponent(
@@ -44,7 +45,21 @@ const ContactSection = () => {
         formData.email
       }\n\n${t("form_message")}:\n${formData.message}`
     )}`;
+
+    // ✅ Try to open mail client
     window.location.href = mailtoLink;
+
+    // ✅ Fallback alert after short delay
+    setTimeout(() => {
+      alert(
+        `${t("fallback_alert")}\n\n${t("form_name")}: ${formData.name}\n${t(
+          "form_email"
+        )}: ${formData.email}\n${t("form_subject")}: ${formData.subject}\n\n${t(
+          "form_message"
+        )}:\n${formData.message}`
+      );
+    }, 1000);
+
     setFormData({ name: "", email: "", subject: "", message: "" });
   };
 

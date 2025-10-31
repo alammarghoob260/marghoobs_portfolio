@@ -13,5 +13,6 @@
   "placeholder_subject": "Project Inquiry",
   "placeholder_message": "Tell me about your project...",
   "details_title": "Get In Touch",
-  "details_text": "💡 I'm always open to exciting projects, fresh ideas, and meaningful collaborations. Whether you're exploring a new venture, seeking a reliable frontend partner 👨‍💻, or simply want to connect 🤝, feel free to reach out. I value thoughtful conversations 💬 and enjoy helping others bring their vision to life 🌱. A quick hello 👋 or a detailed inquiry — either way, I’d love to hear from you and see where it leads."
+  "details_text": "💡 I'm always open to exciting projects, fresh ideas, and meaningful collaborations. Whether you're exploring a new venture, seeking a reliable frontend partner 👨‍💻, or simply want to connect 🤝, feel free to reach out. I value thoughtful conversations 💬 and enjoy helping others bring their vision to life 🌱. A quick hello 👋 or a detailed inquiry — either way, I’d love to hear from you and see where it leads.",
+  "fallback_alert": "If your email client did not open, please copy and send this message manually."
 }
