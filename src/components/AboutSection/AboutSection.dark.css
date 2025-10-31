@@ -1,0 +1,52 @@
+.about-section-dark {
+  background: linear-gradient(
+    135deg,
+    #000000 0%,
+    #0a0a0a 30%,
+    #111111 60%,
+    #1a1a1a 100%
+  );
+  color: #e5e7eb;
+}
+
+/* .about-section-dark .about-title {
+  background: linear-gradient(to right, #22d3ee, #a855f7);
+} */
+
+.about-section-dark .about-text {
+  color: #d1d5db;
+}
+
+.about-section-dark .info-box {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(226, 228, 232, 0.2);
+}
+
+.about-section-dark .info-icon {
+  color: #22d3ee;
+}
+
+.about-section-dark .info-heading {
+  color: #ffffff;
+}
+
+.about-section-dark .info-text,
+.about-section-dark .info-list {
+  color: #d1d5db;
+}
+
+.about-section-dark .cert-link {
+  color: #22d3ee;
+}
+
+.about-section-dark .cert-link:hover {
+  color: #38bdf8;
+}
+
+.about-section-dark .contact-icon {
+  color: #d1d5db;
+}
+
+.about-section-dark .contact-icon:hover {
+  color: #22d3ee;
+}

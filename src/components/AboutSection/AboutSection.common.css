@@ -1,14 +1,6 @@
 .about-section {
   width: 100vw;
   padding: 5rem 1.5rem;
-  background: linear-gradient(
-    135deg,
-    #000000 0%,
-    #0a0a0a 30%,
-    #111111 60%,
-    #1a1a1a 100%
-  );
-  color: #e5e7eb;
 }
 
 .about-container {
@@ -22,25 +14,29 @@
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  background: linear-gradient(to right, #22d3ee, #a855f7);
+  background: linear-gradient(
+    to right,
+    #22d3ee,
+    #a855f7,
+    #ec4899
+  ); /* ✅ gradient added */
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: #ffffff; /* fallback for non-webkit browsers */
+  display: inline-block;
 }
 
 /* Text */
 .about-text {
   font-size: 1.125rem;
   line-height: 1.75;
-  color: #d1d5db;
   max-width: 48rem;
   margin: 2rem auto 3rem;
 }
 
 /* Frosted Info Boxes */
 .info-box {
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(226, 228, 232);
   border-radius: 1rem;
   padding: 1.5rem;
   backdrop-filter: blur(10px);
@@ -80,7 +76,6 @@
 /* Shared Styles */
 .info-icon {
   font-size: 2rem;
-  color: #22d3ee;
   margin-top: 0.3rem;
 }
 
@@ -88,13 +83,11 @@
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: #ffffff;
 }
 
 .info-text,
 .info-list {
   font-size: 1rem;
-  color: #d1d5db;
   line-height: 1.6;
   list-style: none;
   padding: 0;
@@ -102,13 +95,8 @@
 }
 
 .cert-link {
-  color: #22d3ee;
   text-decoration: underline;
   transition: color 0.3s ease;
-}
-
-.cert-link:hover {
-  color: #38bdf8;
 }
 
 /* Contact Bar */
@@ -121,12 +109,7 @@
 
 .contact-icon {
   font-size: 1.5rem;
-  color: #d1d5db;
   transition: color 0.3s ease;
-}
-
-.contact-icon:hover {
-  color: #22d3ee;
 }
 
 /* Responsive */

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { FaRobot } from "react-icons/fa";
 import { useSearch } from "../Search/SearchContext";
 import { useTranslation } from "react-i18next";
+import { useTheme } from "../Theme/ThemeContext";
 import i18n from "../../i18n";
 
 // ✅ Import translation files
@@ -11,20 +12,22 @@ import hi from "./translation/hi.json";
 import bn from "./translation/bn.json";
 import ur from "./translation/ur.json";
 
-import "./AboutSection.css";
+// ✅ Import scoped CSS files
+import "./AboutSection.common.css";
+import "./AboutSection.dark.css";
+import "./AboutSection.light.css";
 
 const AboutSection = () => {
   const { registerSearchItem } = useSearch();
   const { t } = useTranslation("about");
+  const { darkMode } = useTheme();
 
   useEffect(() => {
-    // ✅ Inject translations
     i18n.addResourceBundle("en", "about", en, true, true);
     i18n.addResourceBundle("hi", "about", hi, true, true);
     i18n.addResourceBundle("bn", "about", bn, true, true);
     i18n.addResourceBundle("ur", "about", ur, true, true);
 
-    // ✅ Register searchable content
     registerSearchItem({
       id: "about",
       title: "About",
@@ -33,29 +36,44 @@ const AboutSection = () => {
   }, [registerSearchItem]);
 
   return (
-    <section id="about" className="about-section">
+    <section
+      id="about"
+      className={`about-section ${
+        darkMode ? "about-section-dark" : "about-section-light"
+      }`}
+    >
       <motion.div
-        className="about-container"
+        className={`about-container ${darkMode ? "dark" : "light"}`}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="about-title">{t("title")}</h2>
+        <h2 className={`about-title ${darkMode ? "dark" : "light"}`}>
+          {t("title")}
+        </h2>
 
-        <p className="about-text">{t("intro")}</p>
+        <p className={`about-text ${darkMode ? "dark" : "light"}`}>
+          {t("intro")}
+        </p>
 
-        <div className="info-box center-box">
+        <div className={`info-box center-box ${darkMode ? "dark" : "light"}`}>
           <FaRobot className="info-icon" />
           <div>
-            <h3 className="info-heading">{t("ai_heading")}</h3>
-            <p className="info-text">{t("ai_text")}</p>
+            <h3 className={`info-heading ${darkMode ? "dark" : "light"}`}>
+              {t("ai_heading")}
+            </h3>
+            <p className={`info-text ${darkMode ? "dark" : "light"}`}>
+              {t("ai_text")}
+            </p>
           </div>
         </div>
 
         <div className="info-row-wrapper">
           <div className="info-row">
-            <div className="info-box half-box">
-              <h3 className="info-heading">{t("edu_heading")}</h3>
+            <div className={`info-box half-box ${darkMode ? "dark" : "light"}`}>
+              <h3 className={`info-heading ${darkMode ? "dark" : "light"}`}>
+                {t("edu_heading")}
+              </h3>
               <ul className="info-list">
                 <li>{t("edu_1")}</li>
                 <li>{t("edu_2")}</li>
@@ -63,8 +81,10 @@ const AboutSection = () => {
               </ul>
             </div>
 
-            <div className="info-box half-box">
-              <h3 className="info-heading">{t("cert_heading")}</h3>
+            <div className={`info-box half-box ${darkMode ? "dark" : "light"}`}>
+              <h3 className={`info-heading ${darkMode ? "dark" : "light"}`}>
+                {t("cert_heading")}
+              </h3>
               <ul className="info-list">
                 <li>{t("cert_1")}</li>
                 <li>

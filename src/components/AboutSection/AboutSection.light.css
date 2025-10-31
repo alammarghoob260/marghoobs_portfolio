@@ -1,0 +1,52 @@
+.about-section-light {
+  background: linear-gradient(
+    135deg,
+    #f9fafb 0%,
+    #f3f4f6 30%,
+    #e5e7eb 60%,
+    #d1d5db 100%
+  );
+  color: #1f2937;
+}
+
+/* .about-section-light .about-title {
+  background: linear-gradient(to right, #0ea5e9, #6366f1);
+} */
+
+.about-section-light .about-text {
+  color: #4b5563;
+}
+
+.about-section-light .info-box {
+  background-color: rgba(0, 0, 0, 0.03);
+  border: 1px solid #d1d5db;
+}
+
+.about-section-light .info-icon {
+  color: #0ea5e9;
+}
+
+.about-section-light .info-heading {
+  color: #1f2937;
+}
+
+.about-section-light .info-text,
+.about-section-light .info-list {
+  color: #4b5563;
+}
+
+.about-section-light .cert-link {
+  color: #0ea5e9;
+}
+
+.about-section-light .cert-link:hover {
+  color: #0284c7;
+}
+
+.about-section-light .contact-icon {
+  color: #4b5563;
+}
+
+.about-section-light .contact-icon:hover {
+  color: #0ea5e9;
+}
