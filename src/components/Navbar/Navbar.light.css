@@ -1,0 +1,138 @@
+/* 🔹 Navbar Light Theme */
+.navbar-light {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  color: #111827;
+}
+
+/* 🔍 Search Input */
+.navbar-light .search-input {
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+  color: #1f2937;
+  font-weight: 500;
+}
+
+.navbar-light .search-input::placeholder {
+  color: #4b5563;
+}
+
+.navbar-light .search-input:focus {
+  border-color: #22d3ee;
+  box-shadow: 0 0 6px rgba(34, 211, 238, 0.4);
+}
+
+/* 🔗 Navbar Links */
+.navbar-light .navbar-link {
+  color: #1f2937;
+  border: 1px solid transparent;
+  font-weight: 500;
+}
+
+.navbar-light .navbar-link:hover {
+  color: #0f172a;
+  background-color: #e5e7eb;
+  border-color: #d1d5db;
+}
+
+.navbar-light .navbar-link.active {
+  background-color: rgba(34, 211, 238, 0.15);
+  color: #0ea5e9;
+  border: 1px solid rgba(34, 211, 238, 0.4);
+  box-shadow: 0 0 6px rgba(34, 211, 238, 0.3);
+}
+
+/* 🌗 Theme Toggle */
+.navbar-light .theme-toggle:hover {
+  background-color: #f3f4f6;
+}
+
+.navbar-light .theme-toggle svg {
+  fill: #1f2937;
+}
+
+/* 🍔 Hamburger */
+.navbar-light .navbar-hamburger button {
+  background-color: #e0e7ff;
+  border: 1px solid #c7d2fe;
+  color: #4f46e5;
+}
+
+.navbar-light .navbar-hamburger button:hover {
+  background-color: #dbeafe;
+}
+
+/* 📱 Mobile Links */
+.navbar-light .navbar-links-mobile {
+  background-color: #ffffff;
+  border-top: 1px solid #e5e7eb;
+}
+
+.navbar-light .navbar-links-mobile .navbar-link {
+  color: #1f2937;
+}
+
+.navbar-light .navbar-links-mobile .navbar-link:hover {
+  background-color: #e5e7eb;
+  border-color: #d1d5db;
+}
+
+.navbar-light .navbar-links-mobile .navbar-link.active {
+  background-color: rgba(34, 211, 238, 0.15);
+  color: #0ea5e9;
+  border-color: rgba(34, 211, 238, 0.4);
+}
+
+/* 🔎 Search Results Dropdown */
+.navbar-light .search-results-dropdown {
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-light .search-result-item {
+  color: #1f2937;
+}
+
+.navbar-light .search-result-item:hover {
+  background-color: #e5e7eb;
+}
+
+.navbar-light .no-results {
+  color: #6b7280;
+}
+
+/* 🌐 react-select Light Theme */
+.navbar-light .lang__control {
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+  color: #1f2937;
+}
+
+.navbar-light .lang__control:hover {
+  background-color: #e5e7eb;
+  border-color: #cbd5e1;
+}
+
+.navbar-light .lang__single-value {
+  color: #1f2937;
+}
+
+.navbar-light .lang__menu {
+  background-color: #ffffff;
+}
+
+.navbar-light .lang__option {
+  background-color: #ffffff;
+  color: #1f2937;
+}
+
+.navbar-light .lang__option--is-focused {
+  background-color: #e5e7eb;
+  color: #1f2937;
+}
+
+.navbar-light .lang__dropdown-indicator {
+  color: #4b5563;
+}

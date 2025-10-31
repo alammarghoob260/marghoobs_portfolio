@@ -12,10 +12,20 @@ import { SearchProvider } from "./components/Search/SearchContext";
 import { I18nextProvider } from "react-i18next";
 import i18n from "./i18n";
 import { LanguageProvider } from "./components/TranslationContext/LanguageContext";
-import { ThemeProvider } from "./components/Theme/ThemeContext"
+import { ThemeProvider, useTheme } from "./components/Theme/ThemeContext"; // ✅ useTheme added
 import "./App.css";
 
-const App = () => {
+// ✅ Wrapper component to apply theme to <html>
+const AppContent = () => {
+  const { darkMode } = useTheme();
+
+  useEffect(() => {
+    document.documentElement.setAttribute(
+      "data-theme",
+      darkMode ? "dark" : "light"
+    );
+  }, [darkMode]);
+
   useEffect(() => {
     const handleSmoothScroll = (e) => {
       if (
@@ -39,33 +49,41 @@ const App = () => {
   }, []);
 
   return (
+    <>
+      {/* <FerroLayer /> */}
+      <SpotlightLayer />
+      <Navbar />
+      <main>
+        <div className="ferro">
+          <HeroSection />
+        </div>
+        <div className="ferro">
+          <AboutSection />
+        </div>
+        <div className="ferro">
+          <SkillsSection />
+        </div>
+        <div className="ferro">
+          <ProjectsSection />
+        </div>
+        <div className="ferro">
+          <ContactSection />
+        </div>
+      </main>
+      <div className="ferro">
+        <Footer />
+      </div>
+    </>
+  );
+};
+
+const App = () => {
+  return (
     <ThemeProvider>
       <I18nextProvider i18n={i18n}>
         <LanguageProvider>
           <SearchProvider>
-            {/* <FerroLayer /> */}
-            <SpotlightLayer />
-            <Navbar />
-            <main>
-              <div className="ferro">
-                <HeroSection />
-              </div>
-              <div className="ferro">
-                <AboutSection />
-              </div>
-              <div className="ferro">
-                <SkillsSection />
-              </div>
-              <div className="ferro">
-                <ProjectsSection />
-              </div>
-              <div className="ferro">
-                <ContactSection />
-              </div>
-            </main>
-            <div className="ferro">
-              <Footer />
-            </div>
+            <AppContent />
           </SearchProvider>
         </LanguageProvider>
       </I18nextProvider>

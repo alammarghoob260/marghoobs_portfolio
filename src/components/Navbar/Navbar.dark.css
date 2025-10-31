@@ -1,0 +1,58 @@
+/* 🌐 react-select Dark Theme */
+.navbar-dark .lang__control {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #e0e0e0;
+  backdrop-filter: blur(6px);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navbar-dark .lang__control:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.navbar-dark .lang__single-value {
+  color: #e0e0e0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.navbar-dark .lang__menu {
+  background-color: #1e1e1e;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+}
+
+.navbar-dark .lang__option {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-dark .lang__option--is-focused {
+  background-color: #333;
+  color: #ffffff;
+}
+
+.navbar-dark .lang__dropdown-indicator {
+  color: #ccc;
+}
+
+.navbar-dark .lang__indicator-separator {
+  display: none;
+}
+.navbar-dark {
+  background-color: rgba(0, 0, 0, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* subtle border */
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.05),
+    0 2px 8px rgba(0, 0, 0, 0.4); /* inner + outer shadow */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}

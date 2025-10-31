@@ -13,7 +13,9 @@ import en from "./translation/en.json";
 import hi from "./translation/hi.json";
 import bn from "./translation/bn.json";
 import ur from "./translation/ur.json";
-import "./Navbar.css";
+import "./Navbar.common.css";
+import "./Navbar.light.css";
+import "./Navbar.dark.css";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -22,7 +24,7 @@ const Navbar = () => {
   const { searchData } = useSearch();
   const { language, changeLanguage } = useLanguage();
   const { t } = useTranslation("navbar");
-  const { darkMode, toggleTheme } = useTheme(); // ✅ Global theme state
+  const { darkMode, toggleTheme } = useTheme();
 
   useEffect(() => {
     i18n.addResourceBundle("en", "navbar", en, true, true);
@@ -65,7 +67,7 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${darkMode ? "navbar-dark" : "navbar-light"}`}>
       <div className="navbar-container">
         {/* 🔹 Left: Logo */}
         <div className="navbar-left">
@@ -125,44 +127,6 @@ const Navbar = () => {
             isSearchable={false}
             aria-label="Language Switcher"
             components={{ SingleValue }}
-            styles={{
-              control: (base) => ({
-                ...base,
-                backgroundColor: "rgba(255,255,255,0.05)",
-                borderColor: "rgba(255,255,255,0.2)",
-                color: "#e0e0e0",
-                backdropFilter: "blur(6px)",
-                borderRadius: "6px",
-                fontSize: "0.9rem",
-                minWidth: "120px",
-                cursor: "pointer",
-              }),
-              menu: (base) => ({
-                ...base,
-                backgroundColor: "#1e1e1e",
-                borderRadius: "6px",
-                boxShadow: "0 4px 12px rgba(0,0,0,0.4)",
-                zIndex: 9999,
-              }),
-              option: (base, state) => ({
-                ...base,
-                backgroundColor: state.isFocused ? "#333" : "#1e1e1e",
-                color: "#e0e0e0",
-                padding: "8px 12px",
-                cursor: "pointer",
-              }),
-              singleValue: (base) => ({
-                ...base,
-                color: "#e0e0e0",
-              }),
-              dropdownIndicator: (base) => ({
-                ...base,
-                color: "#ccc",
-              }),
-              indicatorSeparator: () => ({
-                display: "none",
-              }),
-            }}
           />
         </div>
 
