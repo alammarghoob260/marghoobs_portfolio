@@ -1,0 +1,44 @@
+.projects-section-dark {
+  background: linear-gradient(135deg, #000000, #0a0a0a, #111111, #1a1a1a);
+  color: #e5e7eb;
+}
+
+/* .projects-section-dark .projects-title {
+  background: linear-gradient(to right, #22d3ee, #a855f7);
+} */
+
+.projects-section-dark .projects-group {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.projects-section-dark .group-title {
+  color: #ffffff;
+}
+
+.projects-section-dark .group-meta {
+  color: #a1a1aa;
+}
+
+.projects-section-dark .project-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.projects-section-dark .project-name {
+  color: #ffffff;
+}
+
+.projects-section-dark .project-company {
+  color: #a1a1aa;
+}
+
+.projects-section-dark .project-description,
+.projects-section-dark .project-highlights {
+  color: #d1d5db;
+}
+
+.projects-section-dark .tech-badge {
+  background: linear-gradient(to right, #22d3ee, #a855f7);
+  color: #000;
+}

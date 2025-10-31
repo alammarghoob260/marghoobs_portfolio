@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-import "./ProjectSection.css";
 import { projects } from "../data/project";
 import { useSearch } from "../Search/SearchContext";
 import { useTranslation } from "react-i18next";
+import { useTheme } from "../Theme/ThemeContext";
 import i18n from "../../i18n";
 
 // ✅ Import translation files
@@ -11,18 +11,22 @@ import hi from "./translation/hi.json";
 import bn from "./translation/bn.json";
 import ur from "./translation/ur.json";
 
+// ✅ Import scoped CSS files
+import "./ProjectSection.common.css";
+import "./ProjectSection.dark.css";
+import "./ProjectSection.light.css";
+
 const ProjectsSection = () => {
   const { registerSearchItem } = useSearch();
   const { t } = useTranslation("projects");
+  const { darkMode } = useTheme();
 
   useEffect(() => {
-    // ✅ Inject translations
     i18n.addResourceBundle("en", "projects", en, true, true);
     i18n.addResourceBundle("hi", "projects", hi, true, true);
     i18n.addResourceBundle("bn", "projects", bn, true, true);
     i18n.addResourceBundle("ur", "projects", ur, true, true);
 
-    // ✅ Flatten all project data into searchable text
     const allProjects = [];
 
     Object.values(projects).forEach((group) => {
@@ -45,9 +49,9 @@ const ProjectsSection = () => {
   }, [registerSearchItem, t]);
 
   const renderGroup = (group) => (
-    <div className="projects-group">
-      <div className="group-header">
-        <h3 className="group-title">
+    <div className={`projects-group ${darkMode ? "dark" : "light"}`}>
+      <div className={`group-header ${darkMode ? "dark" : "light"}`}>
+        <h3 className={`group-title ${darkMode ? "dark" : "light"}`}>
           <img
             src={group.logo}
             alt={`${t(group.company)} logo`}
@@ -55,7 +59,7 @@ const ProjectsSection = () => {
           />
           {t(group.company)} {t("search_title")}
         </h3>
-        <p className="group-meta">
+        <p className={`group-meta ${darkMode ? "dark" : "light"}`}>
           <strong>{t("role_label")}</strong> {t(group.role)} <br />
           <strong>{t("tenure_label")}</strong> {t(group.tenure)}
           {group.note && (
@@ -69,7 +73,10 @@ const ProjectsSection = () => {
 
       <div className="projects-grid">
         {group.items.map((proj, idx) => (
-          <div key={idx} className="project-card">
+          <div
+            key={idx}
+            className={`project-card ${darkMode ? "dark" : "light"}`}
+          >
             <h4 className="project-name">{t(proj.name)}</h4>
             <p className="project-company">
               {t(group.company)} • <span>{t(proj.duration)}</span>
@@ -94,8 +101,15 @@ const ProjectsSection = () => {
   );
 
   return (
-    <section id="projects" className="projects-section">
-      <h2 className="projects-title">{t("title")}</h2>
+    <section
+      id="projects"
+      className={`projects-section ${
+        darkMode ? "projects-section-dark" : "projects-section-light"
+      }`}
+    >
+      <h2 className={`projects-title ${darkMode ? "dark" : "light"}`}>
+        {t("title")}
+      </h2>
       {renderGroup(projects.pwc)}
       {renderGroup(projects.softlogique)}
     </section>

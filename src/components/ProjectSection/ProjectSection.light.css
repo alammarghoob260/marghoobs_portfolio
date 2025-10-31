@@ -1,0 +1,44 @@
+.projects-section-light {
+  background: linear-gradient(135deg, #f9fafb, #f3f4f6, #e5e7eb, #d1d5db);
+  color: #1f2937;
+}
+
+/* .projects-section-light .projects-title {
+  background: linear-gradient(to right, #0ea5e9, #6366f1);
+} */
+
+.projects-section-light .projects-group {
+  border: 1px solid #d1d5db;
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.projects-section-light .group-title {
+  color: #1f2937;
+}
+
+.projects-section-light .group-meta {
+  color: #4b5563;
+}
+
+.projects-section-light .project-card {
+  background-color: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.projects-section-light .project-name {
+  color: #1f2937;
+}
+
+.projects-section-light .project-company {
+  color: #6b7280;
+}
+
+.projects-section-light .project-description,
+.projects-section-light .project-highlights {
+  color: #4b5563;
+}
+
+.projects-section-light .tech-badge {
+  background: linear-gradient(to right, #0ea5e9, #6366f1);
+  color: #ffffff;
+}
