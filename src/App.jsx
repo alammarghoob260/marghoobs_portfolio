@@ -50,7 +50,7 @@ const AppContent = () => {
 
   return (
     <>
-      <FerroLayer />
+      {/* <FerroLayer /> */}
       <SpotlightLayer />
       <Navbar />
       <main>
