@@ -54,21 +54,21 @@ const AppContent = () => {
       <SpotlightLayer />
       <Navbar />
       <main>
-        <div className="ferro">
+        <section id="home" className="ferro">
           <HeroSection />
-        </div>
-        <div className="ferro">
+        </section>
+        <section id="about" className="ferro">
           <AboutSection />
-        </div>
-        <div className="ferro">
+        </section>
+        <section id="skills" className="ferro">
           <SkillsSection />
-        </div>
-        <div className="ferro">
+        </section>
+        <section id="projects" className="ferro">
           <ProjectsSection />
-        </div>
-        <div className="ferro">
+        </section>
+        <section id="contact" className="ferro">
           <ContactSection />
-        </div>
+        </section>
       </main>
       <div className="ferro">
         <Footer />

@@ -1,14 +1,14 @@
-/* App.css */
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #a855f7 #000000;
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 64px; /* Navbar height offset */
+  scroll-padding-top: 64px;
 }
 
 body {
@@ -22,13 +22,11 @@ body {
   overflow-x: hidden;
 }
 
-/* Remove default link styles */
 a {
   text-decoration: none;
   color: inherit;
 }
 
-/* Remove default button styles */
 button {
   background: none;
   border: none;
@@ -36,24 +34,29 @@ button {
   font-family: inherit;
 }
 
-/* Main container */
 main {
   position: relative;
   z-index: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Selection styles */
-::selection {
-  background-color: rgba(34, 211, 238, 0.3);
-  color: #ffffff;
+section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-margin-top: 80px;
 }
 
+::selection,
 ::-moz-selection {
   background-color: rgba(34, 211, 238, 0.3);
   color: #ffffff;
 }
 
-/* Scrollbar styles */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -72,13 +75,6 @@ main {
   background: linear-gradient(180deg, #0ea5e9, #9333ea);
 }
 
-/* Firefox scrollbar */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #a855f7 #000000;
-}
-
-/* Light Mode Global Styles */
 body.light-mode {
   background-color: #ffffff;
   color: #111827;
@@ -106,7 +102,6 @@ body.light-mode * {
   scrollbar-color: #a855f7 #f9fafb;
 }
 
-/* Loading state (optional) */
 .app-loading {
   position: fixed;
   top: 0;
@@ -135,13 +130,11 @@ body.light-mode * {
   }
 }
 
-/* Focus visible styles for accessibility */
 *:focus-visible {
   outline: 2px solid #22d3ee;
   outline-offset: 2px;
 }
 
-/* Reduce motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -152,7 +145,6 @@ body.light-mode * {
   }
 }
 
-/* Responsive typography base */
 @media (min-width: 640px) {
   html {
     font-size: 16px;
@@ -165,7 +157,6 @@ body.light-mode * {
   }
 }
 
-/* Print styles */
 @media print {
   body {
     background: white;
@@ -176,23 +167,4 @@ body.light-mode * {
   footer {
     display: none;
   }
-}
-
-/* App.css - Add this */
-
-main {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Make sure all sections are centered */
-section {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
