@@ -154,44 +154,66 @@
 /* ✅ Mobile optimization */
 @media (max-width: 767px) {
   .navbar-container {
-    flex-direction: column;
-    align-items: stretch;
-    height: auto;
-    padding: 0.5rem 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
     gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    height: auto;
+  }
+
+  .navbar-left {
+    flex: 0 0 auto;
   }
 
   .navbar-logo {
-    font-size: 1.25rem;
-    text-align: center;
+    font-size: 1.1rem;
+    white-space: nowrap;
   }
 
   .navbar-search {
-    justify-content: stretch;
+    flex: 1 1 auto;
+    min-width: 120px;
   }
 
   .search-input {
-    max-width: 100%;
+    width: 100%;
     font-size: 0.85rem;
     padding: 0.4rem 0.6rem;
   }
 
   .navbar-right {
-    flex-direction: column;
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
     gap: 0.5rem;
-    align-items: stretch;
   }
 
   .theme-toggle {
-    align-self: center;
+    padding: 0.3rem;
   }
 
   .language-switcher-select {
-    width: 100%;
+    width: auto;
+    min-width: 80px;
   }
 
-  .navbar-links-mobile .navbar-link {
-    font-size: 0.9rem;
-    padding: 0.6rem 0.75rem;
+  .navbar-hamburger {
+    display: block;
+  }
+
+  .navbar-hamburger button {
+    font-size: 1.2rem;
+    padding: 0.4rem;
+  }
+
+  .navbar-links-desktop {
+    display: none;
+  }
+
+  .navbar-links-mobile {
+    display: none;
   }
 }
