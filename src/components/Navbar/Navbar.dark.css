@@ -1,3 +1,121 @@
+/* 🔹 Navbar Dark Theme */
+.navbar-dark {
+  background-color: rgba(0, 0, 0, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.05),
+    0 2px 8px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: #e0e0e0;
+}
+
+/* 🔍 Search Icon */
+.navbar-dark .search-icon-button {
+  color: #e0e0e0;
+}
+
+.navbar-dark .search-icon-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+}
+
+/* 🔗 Navbar Links */
+.navbar-dark .navbar-link {
+  color: #e0e0e0;
+  border: 1px solid transparent;
+  font-weight: 500;
+}
+
+.navbar-dark .navbar-link:hover {
+  color: #a855f7;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.navbar-dark .navbar-link.active {
+  background-color: rgba(168, 85, 247, 0.15);
+  color: #a855f7;
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  box-shadow: 0 0 6px rgba(168, 85, 247, 0.3);
+}
+
+/* 🌗 Theme Toggle */
+.navbar-dark .theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-dark .theme-toggle svg {
+  fill: #a855f7;
+}
+
+/* 🍔 Hamburger */
+.navbar-dark .navbar-hamburger button {
+  background-color: rgba(168, 85, 247, 0.15);
+  border: 1px solid #a855f7;
+  color: #a855f7;
+}
+
+.navbar-dark .navbar-hamburger button:hover {
+  background-color: rgba(147, 51, 234, 0.2);
+}
+
+/* 📱 Mobile Links */
+.navbar-dark .navbar-links-mobile {
+  background-color: rgba(0, 0, 0, 0.85);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.navbar-dark .navbar-links-mobile .navbar-link {
+  color: #e0e0e0;
+}
+
+.navbar-dark .navbar-links-mobile .navbar-link:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.navbar-dark .navbar-links-mobile .navbar-link.active {
+  background-color: rgba(168, 85, 247, 0.15);
+  color: #a855f7;
+  border-color: rgba(168, 85, 247, 0.4);
+}
+
+/* 🔎 Search Panel */
+.navbar-dark .search-panel {
+  background-color: #000000;
+}
+
+.navbar-dark .search-panel-content {
+  background-color: #000000;
+  color: #e0e0e0;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.navbar-dark .search-panel-close {
+  color: #ccc;
+}
+
+.navbar-dark .search-input-wrapper {
+  background-color: transparent;
+}
+
+.navbar-dark .search-input-icon {
+  color: #888;
+}
+
+.navbar-dark .search-panel-input {
+  background-color: transparent;
+  color: #e0e0e0;
+}
+
+.navbar-dark .search-panel-input::placeholder {
+  color: #888;
+}
+
+.navbar-dark .search-panel-input:focus {
+  outline: none;
+}
+
 /* 🌐 react-select Dark Theme */
 .navbar-dark .lang__control {
   background-color: rgba(255, 255, 255, 0.05);
@@ -47,12 +165,4 @@
 
 .navbar-dark .lang__indicator-separator {
   display: none;
-}
-.navbar-dark {
-  background-color: rgba(0, 0, 0, 0.85);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* subtle border */
-  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.05),
-    0 2px 8px rgba(0, 0, 0, 0.4); /* inner + outer shadow */
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
 }
