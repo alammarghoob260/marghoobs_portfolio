@@ -59,16 +59,20 @@ const ProjectsSection = () => {
           />
           {t(group.company)} {t("search_title")}
         </h3>
-        <p className={`group-meta ${darkMode ? "dark" : "light"}`}>
-          <strong>{t("role_label")}</strong> {t(group.role)} <br />
-          <strong>{t("tenure_label")}</strong> {t(group.tenure)}
-          {group.note && (
-            <>
-              <br />
-              <strong>{t("note_label")}</strong> {t(group.note)}
-            </>
-          )}
-        </p>
+
+        {/* ✅ Wrapped group-meta in a flex container */}
+        <div className="group-meta-wrapper">
+          <p className={`group-meta ${darkMode ? "dark" : "light"}`}>
+            <strong>{t("role_label")}</strong> {t(group.role)} <br />
+            <strong>{t("tenure_label")}</strong> {t(group.tenure)}
+            {group.note && (
+              <>
+                <br />
+                <strong>{t("note_label")}</strong> {t(group.note)}
+              </>
+            )}
+          </p>
+        </div>
       </div>
 
       <div className="projects-grid">
