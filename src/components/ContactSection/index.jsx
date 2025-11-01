@@ -158,7 +158,7 @@ const ContactSection = () => {
                 className="contact-email"
               >
                 <img
-                  src="../../../public/Gmail_icon_(2020).svg"
+                  src="/Gmail_icon_(2020).svg"
                   alt="Gmail"
                   className="contact-icon"
                 />
@@ -166,7 +166,7 @@ const ContactSection = () => {
               </a>
               <a href="tel:+919038257967" className="contact-email">
                 <img
-                  src="../../../public/mobile-phone-51.svg"
+                  src="/mobile-phone-51.svg"
                   alt="Phone"
                   className="contact-icon"
                 />
@@ -179,7 +179,7 @@ const ContactSection = () => {
                 className="contact-linkedin"
               >
                 <img
-                  src="../../../public/GitHub_Invertocat_Light.svg"
+                  src="/GitHub_Invertocat_Light.svg"
                   alt="GitHub"
                   className="contact-icon"
                 />
@@ -192,7 +192,7 @@ const ContactSection = () => {
                 className="contact-linkedin"
               >
                 <img
-                  src="../../../public/LinkedIn_icon.svg"
+                  src="/LinkedIn_icon.svg"
                   alt="LinkedIn"
                   className="contact-icon"
                 />

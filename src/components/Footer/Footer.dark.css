@@ -11,3 +11,8 @@
 .footer-dark::before {
   background: linear-gradient(to right, transparent, #a855f7, transparent);
 }
+
+.scroll-top-button.dark .scroll-top-icon {
+  color: #f3f4f6;
+  filter: drop-shadow(0 0 2px #0ea5e9);
+}

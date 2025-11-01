@@ -1,7 +1,7 @@
 export const projects = {
   pwc: {
     company: "pwc_india",
-    logo: "../../../public/pwc-logo.svg",
+    logo: "/public/pwc-logo.svg",
     role: "software_engineer",
     tenure: "nov_2023_present",
     note: "converted_fulltime",
@@ -25,7 +25,7 @@ export const projects = {
 
   softlogique: {
     company: "softlogique",
-    logo: "../../../public/logo_softlogique.svg",
+    logo: "/logo_softlogique.svg",
     role: "software_engineer",
     tenure: "sep_2022_nov_2022",
     note: "contractor_zmc",

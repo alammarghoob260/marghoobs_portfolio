@@ -69,3 +69,28 @@
     padding: 3rem 2rem;
   }
 }
+
+.scroll-top-button {
+  margin-top: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  display: flex;
+  justify-content: center;
+}
+
+.scroll-top-button:hover {
+  transform: translateY(-4px);
+}
+
+.scroll-top-icon {
+  height: 36px;
+  width: 36px;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-top-button:hover .scroll-top-icon {
+  opacity: 1;
+}
