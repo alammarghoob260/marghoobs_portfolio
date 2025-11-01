@@ -3,9 +3,9 @@
   color: #e5e7eb;
 }
 
-/* .projects-section-dark .projects-title {
+.projects-section-dark .projects-title {
   background: linear-gradient(to right, #22d3ee, #a855f7);
-} */
+}
 
 .projects-section-dark .projects-group {
   border: 1px solid rgba(255, 255, 255, 0.2);

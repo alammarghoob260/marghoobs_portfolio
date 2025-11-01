@@ -1,54 +1,61 @@
+/* 🔹 Light Mode — Section Background */
 .projects-section-light {
-  background: linear-gradient(
-    135deg,
-    #f9fafb,
-    #faf5ff,
-    #fce7f3,
-    #fce7f3
-  ); /* ✅ pink-violet gradient */
+  background-color: #f9fafb;
   color: #1f2937;
 }
 
-/* .projects-section-light .projects-title {
-  background: linear-gradient(to right, #ec4899, #a855f7);  ✅ pink-violet gradient
-} */
-
-.projects-section-light .projects-group {
-  border: 1px solid #ec4899; /* ✅ pink border */
-  background-color: rgba(236, 72, 153, 0.05); /* ✅ soft pink */
+/* 🔹 Light Mode — Group Container */
+.projects-group.light {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
 }
 
-.projects-section-light .group-title {
-  color: #7c3aed; /* ✅ violet title */
+/* 🔹 Light Mode — Group Title */
+.group-title.light {
+  color: #1f2937;
 }
 
-.projects-section-light .group-meta {
+/* 🔹 Light Mode — Group Meta */
+.group-meta.light {
   color: #4b5563;
 }
 
-.projects-section-light .project-card {
-  background-color: rgba(236, 72, 153, 0.05); /* ✅ soft pink */
-  border: 1px solid rgba(236, 72, 153, 0.2); /* ✅ pink tint border */
+/* 🔹 Light Mode — Project Card */
+.project-card.light {
+  background-color: #fefefe;
+  border: 1px solid #e5e7eb;
+  color: #1f2937;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
-.projects-section-light .project-name {
-  color: #7c3aed; /* ✅ violet name */
+/* 🔹 Light Mode — Project Name */
+.project-name {
+  color: #111827;
 }
 
-.projects-section-light .project-company {
+/* 🔹 Light Mode — Project Company */
+.project-company {
   color: #6b7280;
 }
 
-.projects-section-light .project-description,
-.projects-section-light .project-highlights {
+/* 🔹 Light Mode — Project Description */
+.project-description {
+  color: #374151;
+}
+
+/* 🔹 Light Mode — Highlights */
+.project-highlights {
   color: #4b5563;
 }
 
-.projects-section-light .tech-badge {
-  background: linear-gradient(
-    to right,
-    #ec4899,
-    #a855f7
-  ); /* ✅ pink-violet badge */
-  color: #ffffff;
+/* 🔹 Light Mode — Tech Badge */
+.tech-badge {
+  background-color: #f3f4f6;
+  color: #1f2937;
+  border: 1px solid #e5e7eb;
+}
+
+/* 🔹 Light Mode — Company Logo */
+.company-logo {
+  filter: none;
 }
