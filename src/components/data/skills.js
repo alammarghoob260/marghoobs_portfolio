@@ -70,7 +70,7 @@ export const skills = {
       items: [
         {
           name: "tailwind_css",
-          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
+          logo: "/tailwindcss-mark.d52e9897.svg",
         },
         {
           name: "material_ui",

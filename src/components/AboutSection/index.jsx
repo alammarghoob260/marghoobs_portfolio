@@ -89,7 +89,7 @@ const AboutSection = () => {
                 <li>{t("cert_1")}</li>
                 <li>
                   <a
-                    href="https://www.example.com/certificate"
+                    href="https://www.coursera.org/account/accomplishments/certificate/9K8B95VW9LL8"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="cert-link"
