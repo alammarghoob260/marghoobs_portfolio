@@ -225,8 +225,12 @@ body.search-active .page-content {
     gap: 0.5rem;
   }
 
-  .navbar-links-mobile {
-    display: none;
+  navbar-links-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.5rem 1rem 0.75rem;
+    backdrop-filter: blur(20px);
   }
 }
 
