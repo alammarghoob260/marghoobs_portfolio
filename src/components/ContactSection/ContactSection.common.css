@@ -1,13 +1,12 @@
-/* ContactSection.css - COMMON STRUCTURE ONLY */
-
+/* 🔹 Section Wrapper */
 .contact-section {
   position: relative;
-  width: 100vw; /* ✅ Full viewport width */
-  margin: 0; /* ✅ Remove default margin */
-  padding: 5rem 0; /* ✅ Vertical padding only */
+  width: 100vw;
+  margin: 0;
+  padding: 5rem 0;
   display: flex;
   justify-content: center;
-  overflow-x: hidden; /* ✅ Prevent horizontal scroll if needed */
+  overflow-x: hidden;
 }
 
 .contact-container {
@@ -24,12 +23,7 @@
   margin-bottom: 1rem;
   position: relative;
   display: inline-block;
-  background: linear-gradient(
-    to right,
-    #22d3ee,
-    #a855f7,
-    #ec4899
-  ); /* ✅ gradient added */
+  background: linear-gradient(to right, #22d3ee, #a855f7, #ec4899);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -50,15 +44,23 @@
   max-width: 48rem;
 }
 
+/* 🔹 Contact Content Layout */
 .contact-content {
   display: flex;
   gap: 4rem;
-  align-items: stretch; /* ✅ Makes both children equal height */
+  align-items: stretch;
   margin-top: 3rem;
   text-align: left;
+  flex-wrap: wrap;
 }
 
-/* Contact Form */
+.contact-form,
+.contact-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* 🔹 Contact Form */
 .contact-form {
   padding: 2.5rem;
   border-radius: 1rem;
@@ -130,7 +132,7 @@
   transform: translateY(0);
 }
 
-/* Contact Info */
+/* 🔹 Contact Info */
 .contact-info {
   display: flex;
   flex-direction: column;
@@ -177,24 +179,7 @@
   line-height: 1.7;
 }
 
-/* Responsive Design */
-@media (min-width: 768px) {
-  .contact-title {
-    font-size: 3rem;
-  }
-
-  .contact-content {
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .contact-title {
-    font-size: 3.5rem;
-  }
-}
-
+/* 🔹 Icons */
 .contact-icon {
   height: 20px;
   width: 20px;
@@ -203,7 +188,55 @@
   vertical-align: middle;
 }
 
-.contact-form,
-.contact-info {
-  flex: 1;
+/* 🔹 Responsive Design */
+@media (max-width: 768px) {
+  .contact-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .contact-title {
+    font-size: 2rem;
+  }
+
+  .contact-text {
+    font-size: 1rem;
+  }
+
+  .form-input,
+  .form-textarea {
+    font-size: 0.95rem;
+    padding: 0.75rem;
+  }
+
+  .form-submit {
+    font-size: 1rem;
+    padding: 0.75rem 1.25rem;
+  }
+
+  .contact-details-text {
+    font-size: 0.95rem;
+  }
+
+  .contact-links a {
+    font-size: 0.95rem;
+    gap: 0.5rem;
+  }
+
+  .contact-icon {
+    height: 18px;
+    width: 18px;
+  }
+}
+
+@media (min-width: 768px) {
+  .contact-title {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contact-title {
+    font-size: 3.5rem;
+  }
 }
