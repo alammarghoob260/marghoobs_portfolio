@@ -53,7 +53,7 @@ const ProjectsSection = () => {
       <div className={`group-header ${darkMode ? "dark" : "light"}`}>
         <h3 className={`group-title ${darkMode ? "dark" : "light"}`}>
           <img
-            src={group.logo}
+            src={darkMode ? group.logoDark : group.logoLight}
             alt={`${t(group.company)} logo`}
             className="company-logo"
           />

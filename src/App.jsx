@@ -15,7 +15,7 @@ import { LanguageProvider } from "./components/TranslationContext/LanguageContex
 import { ThemeProvider, useTheme } from "./components/Theme/ThemeContext"; // ✅ useTheme added
 import "./App.css";
 
-// ✅ Wrapper component to apply theme to <html>
+
 const AppContent = () => {
   const { darkMode } = useTheme();
 
